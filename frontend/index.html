@@ -1,0 +1,1809 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070a0f">
+
+  <title>LunaSite | Lunar Mission Workspace</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Cesium -->
+  <script>
+    window.CESIUM_BASE_URL =
+      "https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/";
+  </script>
+
+  <link
+    href="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Widgets/widgets.css"
+    rel="stylesheet"
+  >
+
+  <!-- Project CSS -->
+  <link href="style.css?v=5.7" rel="stylesheet">
+
+  <!-- Cesium JS -->
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.127/Build/Cesium/Cesium.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= TOPBAR (Always Visible Brand & Telemetry) ================= -->
+
+  <header class="topbar" id="appTopbar">
+
+    <div class="topbar-left">
+      <button id="menuBtn" class="menu-btn" title="Toggle Sidebar (Rail / Expanded)" aria-label="Toggle sidebar">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a class="brand-topbar" href="#" title="LunaSite - Lunar Geospatial Workspace">
+        <img src="./LunaSite Orbital Moon Logo.png" alt="LunaSite Logo" class="brand-topbar-logo">
+        <span class="brand-topbar-title">LunaSite</span>
+      </a>
+
+      <div class="crumb">
+        <span>MISSION WORKSPACE</span>
+        <i>/</i>
+        <b id="crumbText">Lunar explorer</b>
+      </div>
+    </div>
+
+    <div class="top-right">
+
+      <div id="backendPill" class="backend-pill" style="display: flex; align-items: center; gap: 8px;">
+        <i class="backend-dot" id="backendTopDot"></i>
+        <span id="backendTopText">CONNECTING BACKEND...</span>
+      </div>
+
+      <div id="databasePill" class="backend-pill" style="border-color: rgba(56, 189, 248, 0.35); background: rgba(56, 189, 248, 0.08); display: flex; align-items: center; gap: 8px;">
+        <i class="backend-dot" id="dbTopDot" style="background: #38bdf8; box-shadow: 0 0 8px #38bdf8;"></i>
+        <span id="dbTopText" style="color: #7dd3fc; font-weight: 600; font-family: 'DM Mono', monospace; font-size: 11px;">SUPABASE CLOUD ACTIVE</span>
+      </div>
+
+      <span class="utc">
+        <i></i>
+        <b id="utc">UTC --:--:--</b>
+      </span>
+
+      <span class="divider"></span>
+
+      <span class="team">
+        SHAHI PANEER / SPACE APPS 2026
+      </span>
+
+    </div>
+  </header>
+
+
+  <!-- ================= SIDEBAR (Collapsible Navigation Rail) ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <div class="nav-caption">NAVIGATION</div>
+      <button id="sidebarCollapseTopBtn" class="sidebar-collapse-top-btn" title="Collapse sidebar (Ctrl+B)" aria-label="Collapse sidebar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="sidebar-collapse-icon">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="nav-group">
+      <button class="nav-item active" data-view="globe" title="Lunar explorer">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </span>
+        <span class="nav-text">Lunar explorer</span>
+      </button>
+
+      <button class="nav-item" data-view="assessment" title="Site assessment">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="22" y1="12" x2="18" y2="12"></line>
+            <line x1="6" y1="12" x2="2" y2="12"></line>
+            <line x1="12" y1="6" x2="12" y2="2"></line>
+            <line x1="12" y1="22" x2="12" y2="18"></line>
+          </svg>
+        </span>
+        <span class="nav-text">Site assessment</span>
+      </button>
+
+      <button class="nav-item" data-view="missions" title="Historical missions">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+          </svg>
+        </span>
+        <span class="nav-text">Historical missions</span>
+      </button>
+
+      <button class="nav-item" data-view="saved" title="Saved landing sites">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </span>
+        <span class="nav-text">Saved landing sites</span>
+      </button>
+
+      <button class="nav-item" data-view="about" title="Data & methodology">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            <line x1="9" y1="7" x2="15" y2="7"></line>
+            <line x1="9" y1="11" x2="15" y2="11"></line>
+          </svg>
+        </span>
+        <span class="nav-text">Data & methodology</span>
+      </button>
+
+      <button class="nav-item" data-view="grading" title="Mission grading">
+        <span class="nav-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+        </span>
+        <span class="nav-text">Mission grading</span>
+      </button>
+    </div>
+
+    <div class="sidebar-bottom">
+
+      <small class="side-foot">
+        INDEPENDENT STUDENT PROJECT<br>
+        NOT AN OFFICIAL NASA PRODUCT
+      </small>
+
+    </div>
+  </aside>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+
+  <main class="main">
+
+
+    <!-- ================= LUNAR EXPLORER ================= -->
+
+    <section class="view active" id="globeView">
+
+      <div class="heading-row">
+
+        <div>
+          <div class="eyebrow">
+            LUNAR GEOSPATIAL WORKSPACE
+          </div>
+
+          <h1>
+            Lunar <span>explorer.</span>
+          </h1>
+
+          <p>
+            Explore the lunar model, inspect the reference region
+            and define coordinates for assessment.
+          </p>
+        </div>
+
+        <div class="model-status">
+          <i id="statusDot"></i>
+          <span id="modelStatus">
+            WAITING FOR MODEL CONFIGURATION
+          </span>
+        </div>
+
+      </div>
+
+
+      <!-- 3D VIEWER -->
+
+      <div class="viewer-shell">
+
+        <div class="viewer-topline">
+
+          <div>
+            <b>GLOBAL LUNAR MODEL</b>
+            <small>CESIUM 3D VIEWER · ION ASSET</small>
+          </div>
+
+          <div class="viewer-tools">
+            <button id="toggleLabelsBtn" title="Toggle between Static Name Mode and All Labels">LABELS: STATIC</button>
+            <button id="homeBtn">RESET VIEW</button>
+            <button id="spinBtn">AUTO ROTATE: OFF</button>
+          </div>
+
+        </div>
+
+
+        <!-- CESIUM CONTAINER -->
+
+        <div id="cesiumContainer">
+
+          <!-- HTML OVERLAY MARKERS (CRISP VECTOR LABELS) -->
+          <div id="lunarHtmlMarkersContainer" class="lunar-html-markers-container"></div>
+
+
+          <!-- LUNAR LIGHTING SIMULATOR -->
+
+          <div class="lighting-panel" id="lightingPanel">
+
+            <div class="lighting-panel-header" id="lightingPanelHeader">
+              <h3>☀ Lunar Lighting Simulator</h3>
+              <button id="toggleLightingPanel" class="panel-toggle-btn" title="Collapse panel" aria-label="Toggle Lunar Lighting Simulator panel">−</button>
+            </div>
+
+            <div class="lighting-panel-body" id="lightingPanelBody">
+              <label for="simulationDate">
+                Simulation Date (UTC)
+              </label>
+
+              <input
+                type="datetime-local"
+                id="simulationDate"
+                step="1"
+              >
+
+              <div class="lighting-actions">
+
+                <button id="togglePlayLighting" class="play-toggle-btn" title="Toggle simulation play / pause">
+                  ▶ Play
+                </button>
+
+                <button id="resetLighting" title="Reset simulation to current UTC">
+                  ↺ Reset
+                </button>
+
+              </div>
+
+              <label for="timeSpeed">
+                Simulation Speed
+              </label>
+
+              <select id="timeSpeed">
+                <option value="1">1×</option>
+                <option value="60">60×</option>
+                <option value="600">600×</option>
+                <option value="3600">3600×</option>
+              </select>
+
+              <p>
+                Simulation:
+                <span id="simulationStatus">Paused</span>
+              </p>
+
+              <p>
+                UTC:
+                <span id="simulationClock">--:--:--</span>
+              </p>
+            </div>
+
+          </div>
+
+
+          <!-- LOADING SCREEN -->
+
+          <div class="loading" id="loading">
+
+            <div class="loader"></div>
+
+            <b id="loadingTitle">
+              CONFIGURE YOUR LUNAR MODEL
+            </b>
+
+            <span id="loadingText">
+              Add your Cesium ion token and lunar asset ID in config.js.
+            </span>
+
+          </div>
+
+
+          <!-- LEFT HUD -->
+
+          <div class="map-hud hud-left" id="mapHudLeft">
+
+            <span>VIEW MODE</span>
+            <b>3D / LUNAR</b>
+
+            <span class="hud-rule"></span>
+
+            <span>TARGET SITE</span>
+            <b id="hudReferenceSite">LUNAR SURFACE</b>
+            <small id="hudSiteDetails" style="display:block; font-size:10px; color:#38bdf8; margin-top:2px;">CLICK ANY POINT OR MISSION TO INSPECT</small>
+
+          </div>
+
+
+          <!-- RIGHT HUD -->
+
+          <div class="map-hud hud-right">
+
+            <span>LATITUDE</span>
+            <b id="hudLat">69.3676° S</b>
+
+            <span>LONGITUDE</span>
+            <b id="hudLon">32.3481° E</b>
+
+          </div>
+
+
+          <!-- CENTER CROSSHAIR -->
+
+          <div class="map-crosshair">+</div>
+
+          <!-- EXPANDABLE 13-LAYER SUITE & SUITABILITY DRAWER -->
+          <div class="layers-drawer" id="layersDrawer" hidden>
+            <div class="layers-drawer-header">
+              <div class="drawer-title">
+                <b>13 SCIENTIFIC MOON MAP LAYERS</b>
+                <small>NASA TREK · LOLA · DIVINER · HORIZONS</small>
+              </div>
+              <button id="closeLayersDrawer" class="drawer-close-btn" title="Close drawer">×</button>
+            </div>
+
+            <!-- FLAGSHIP HERO CARD -->
+            <div class="suitability-hero-card" id="suitabilityHeroCard">
+              <div class="hero-card-header">
+                <span class="hero-badge">★ FLAGSHIP INNOVATION</span>
+                <span class="hero-score-pill" id="heroSuitabilityScore">SCORE: 92/100</span>
+              </div>
+              <h4>Landing Suitability Heatmap</h4>
+              <p>Multi-criteria composite synthesizing LOLA slopes (&le;10°), Diviner thermal stability (120-300K), solar flux (&ge;70%), and DTE Earth communication line-of-sight.</p>
+              <div class="hero-card-actions">
+                <button id="activateSuitabilityBtn" class="primary-accent-btn">ACTIVATE SUITABILITY HEATMAP</button>
+              </div>
+            </div>
+
+            <!-- LAYER CATEGORIES ACCORDION / LIST -->
+            <div class="layers-list" id="layersList">
+              <!-- Category 1: Topography & Morphometry -->
+              <div class="layer-category-title">TOPOGRAPHY & MORPHOMETRY</div>
+              <div class="layer-item" data-layer="wac">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="wac">
+                  <span class="layer-name">NASA WAC Global Mosaic</span>
+                </label>
+                <span class="layer-dataset-badge">LROC 303ppd</span>
+              </div>
+              <div class="layer-item" data-layer="elevation">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="elevation">
+                  <span class="layer-name">Elevation / Topography</span>
+                </label>
+                <span class="layer-dataset-badge">LOLA 128ppd</span>
+              </div>
+              <div class="layer-item" data-layer="slope">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="slope">
+                  <span class="layer-name">Slope Heatmap</span>
+                </label>
+                <span class="layer-dataset-badge">LOLA Slope 16ppd</span>
+              </div>
+              <div class="layer-item" data-layer="roughness">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="roughness">
+                  <span class="layer-name">Surface Roughness</span>
+                </label>
+                <span class="layer-dataset-badge">LOLA Hurst</span>
+              </div>
+
+              <!-- Category 2: Environmental & Thermal -->
+              <div class="layer-category-title">ENVIRONMENTAL & THERMAL</div>
+              <div class="layer-item" data-layer="thermal">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="thermal">
+                  <span class="layer-name">Temperature / Thermal</span>
+                </label>
+                <span class="layer-dataset-badge">Diviner DLRE</span>
+              </div>
+              <div class="layer-item" data-layer="psr">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="psr">
+                  <span class="layer-name">Permanently Shadowed Regions</span>
+                </label>
+                <span class="layer-dataset-badge">LRO PSR</span>
+              </div>
+              <div class="layer-item" data-layer="illumination">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="illumination">
+                  <span class="layer-name">Sunlight / Illumination</span>
+                </label>
+                <span class="layer-dataset-badge">LRO WAC</span>
+              </div>
+
+              <!-- Category 3: Resources & Composition -->
+              <div class="layer-category-title">COMPOSITION & VOLATILES</div>
+              <div class="layer-item" data-layer="mineral">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="mineral">
+                  <span class="layer-name">Mineral / Iron (FeO)</span>
+                </label>
+                <span class="layer-dataset-badge">Clementine</span>
+              </div>
+              <div class="layer-item" data-layer="water_ice">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="water_ice">
+                  <span class="layer-name">Water-Ice Potential</span>
+                </label>
+                <span class="layer-dataset-badge">Cold Traps</span>
+              </div>
+
+              <!-- Category 4: Communication & Operations -->
+              <div class="layer-category-title">COMMUNICATION & FLIGHT OPS</div>
+              <div class="layer-item" data-layer="earth_visibility">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="earth_visibility">
+                  <span class="layer-name">Earth Visibility / DTE</span>
+                </label>
+                <span class="layer-dataset-badge">JPL Horizons</span>
+              </div>
+              <div class="layer-item" data-layer="comm_coverage">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="comm_coverage">
+                  <span class="layer-name">Communication Coverage</span>
+                </label>
+                <span class="layer-dataset-badge">Relay LOS</span>
+              </div>
+              <div class="layer-item" data-layer="hazards">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="hazards">
+                  <span class="layer-name">Crater & Hazard Zones</span>
+                </label>
+                <span class="layer-dataset-badge">LROC / Slope</span>
+              </div>
+              <div class="layer-item" data-layer="candidate_zones">
+                <label class="layer-toggle-wrap">
+                  <input type="checkbox" class="layer-checkbox" data-layer="candidate_zones">
+                  <span class="layer-name">Candidate Landing Corridors</span>
+                </label>
+                <span class="layer-dataset-badge">Artemis 2026</span>
+              </div>
+                </label>
+                <span class="layer-dataset-badge">Artemis III / ISRO</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- UNIVERSAL SCIENTIFIC LAYER LEGEND & DETAILS BAR -->
+          <div class="suitability-legend-overlay" id="suitabilityLegend" hidden>
+            <div class="legend-header" id="legendHeader">
+              <div class="legend-header-left">
+                <span class="legend-drag-grip" title="Drag to reposition">⋮⋮</span>
+                <span class="legend-icon-badge">★</span>
+                <span class="legend-title" id="legendTitle">Composite Suitability Rating</span>
+              </div>
+              <button id="closeSuitabilityLegend" class="legend-close-btn" title="Close legend">✕</button>
+            </div>
+
+            <!-- Visual Scale Bar & Segments -->
+            <div class="legend-scale-section">
+              <div class="scale-bar" id="legendScaleBar"></div>
+              <div class="legend-scale-grid">
+                <div class="scale-step low">
+                  <span class="scale-tier-label" id="legendScaleLow">0–49 HAZARD</span>
+                  <span class="scale-tier-sub" id="legendValLow">Steep / Extreme</span>
+                </div>
+                <div class="scale-step mid">
+                  <span class="scale-tier-label" id="legendScaleMid">50–79 MODERATE</span>
+                  <span class="scale-tier-sub" id="legendValMid">Marginal Light</span>
+                </div>
+                <div class="scale-step high">
+                  <span class="scale-tier-label" id="legendScaleHigh">80–100 OPTIMAL</span>
+                  <span class="scale-tier-sub" id="legendValHigh">Flat & Max Sun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Scientific Description Card -->
+            <div class="legend-desc" id="legendDesc">
+              Flagship multi-sensor synthesis combining LOLA slope (≤10°), Diviner thermal stability (120–300K), solar illumination (≥70%), and direct-to-Earth communication line-of-sight.
+            </div>
+
+            <!-- Jump Hotspots Grid -->
+            <div class="legend-corridors-box" id="legendCorridorsBox">
+              <div class="legend-corridors-header">
+                <span class="legend-corridors-title">BENCHMARK LANDING HOTSPOTS</span>
+                <span class="legend-corridors-hint">FLY TO SITE →</span>
+              </div>
+              <div class="legend-corridors" id="legendCorridors">
+                <button class="corridor-tag optimal" type="button" data-lat="-69.3676" data-lon="32.3481">
+                  <span class="corridor-name">Shiv Shakti</span>
+                  <span class="corridor-score">92</span>
+                </button>
+                <button class="corridor-tag optimal" type="button" data-lat="-89.44" data-lon="222.05">
+                  <span class="corridor-name">Artemis Ridge</span>
+                  <span class="corridor-score">94</span>
+                </button>
+                <button class="corridor-tag optimal" type="button" data-lat="-84.9" data-lon="12.9">
+                  <span class="corridor-name">Malapert Mtn</span>
+                  <span class="corridor-score">89</span>
+                </button>
+                <button class="corridor-tag moderate" type="button" data-lat="0.674" data-lon="23.473">
+                  <span class="corridor-name">Apollo 11</span>
+                  <span class="corridor-score">78</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- VIEWER FOOTER -->
+
+        <div class="viewer-bottom">
+
+          <span>
+            <i class="pin-dot"></i>
+            ACTIVE TARGET MARKER
+          </span>
+
+          <span>
+            DRAG TO ROTATE · SCROLL TO ZOOM · RIGHT-DRAG TO TILT
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- ================= BELOW VIEWER ================= -->
+
+      <div class="below-grid">
+
+
+        <!-- COORDINATE PANEL -->
+
+        <section class="panel coordinate-panel">
+
+          <div class="panel-title">
+
+            <div>
+              <b>TARGET COORDINATES</b>
+              <small>MOON-CENTRED REFERENCE</small>
+            </div>
+
+            <span>01</span>
+
+          </div>
+
+
+          <div class="coordinate-fields">
+
+            <label>
+              LATITUDE
+
+              <input
+                id="lat"
+                type="number"
+                min="-90"
+                max="90"
+                step="any"
+                value="-69.367621"
+              >
+            </label>
+
+            <label>
+              LONGITUDE
+
+              <input
+                id="lon"
+                type="number"
+                min="-180"
+                max="180"
+                step="any"
+                value="32.348126"
+              >
+            </label>
+
+          </div>
+
+
+          <div class="button-row">
+
+            <button class="primary" id="flyBtn" style="width: 100%;">
+              FLY TO COORDINATES ↗
+            </button>
+
+          </div>
+
+          <p class="micro-note">
+            Marker alignment assumes your Cesium ion lunar asset is
+            georeferenced in a compatible lunar coordinate frame.
+            Verify its metadata before relying on marker placement.
+          </p>
+
+        </section>
+
+
+        <!-- DYNAMIC SELECTED POSITION & TARGET INTELLIGENCE PANEL -->
+
+        <section class="panel reference-panel" id="selectedSitePanel">
+
+          <div class="panel-title">
+
+            <div>
+              <b id="selSiteCardCategory">TARGET POSITION</b>
+              <small id="selSiteCardContext">LUNAR SURFACE SELECTION</small>
+            </div>
+
+            <span id="selSiteCardBadge" class="mission-agency-badge default">TARGET</span>
+
+          </div>
+
+          <h2 id="selSiteCardTitle">Selected Lunar Position</h2>
+
+          <p id="selSiteCardDesc">
+            Click anywhere on the lunar surface or choose any mission to inspect terrain, solar illumination, and operational suitability.
+          </p>
+
+          <div class="reference-coords">
+
+            <div>
+              <small>LATITUDE</small>
+              <b id="selSiteCardLat">--.----°</b>
+            </div>
+
+            <div>
+              <small>LONGITUDE</small>
+              <b id="selSiteCardLon">--.----°</b>
+            </div>
+
+          </div>
+
+          <div class="reference-coords" style="margin-top: 8px;">
+
+            <div>
+              <small>ELEVATION (LOLA)</small>
+              <b id="selSiteCardElev">-- m</b>
+            </div>
+
+            <div>
+              <small>SURFACE SLOPE</small>
+              <b id="selSiteCardSlope">--°</b>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 14px; display: flex; gap: 8px;">
+            <button class="catalog-action-btn" id="selSiteAssessBtn" style="flex: 1; justify-content: center; font-size: 10px;" title="Assess this position in full scientific assessment engine">
+              ASSESS SITE ↗
+            </button>
+            <button class="catalog-action-btn" id="selSiteBookmarkBtn" style="flex: 1; justify-content: center; font-size: 10px;" title="Bookmark to saved candidate sites">
+              ★ BOOKMARK
+            </button>
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- ================= LIVE MISSION GRADING & SAFETY ON MAIN SCREEN ================= -->
+
+      <section class="panel main-grading-panel" id="mainGradingPanel">
+
+        <div class="panel-title">
+          <div>
+            <b>MISSION SUITABILITY & SAFETY SCREENING</b>
+            <small id="mainGradingSub">EVALUATING SELECTED COORDINATES AGAINST MISSION OBJECTIVES</small>
+          </div>
+          <span id="mainGradingStatusBadge" class="live-pill">LIVE EVALUATION</span>
+        </div>
+
+        <!-- Mission Profile Selector Pills -->
+        <div class="main-mission-pills" id="mainMissionPills">
+          <button class="m-pill active" data-mission="human_landing" onclick="selectMainMission('human_landing')">
+            👩‍🚀 Human Landing (Artemis)
+          </button>
+          <button class="m-pill" data-mission="rover_exploration" onclick="selectMainMission('rover_exploration')">
+            🚗 Rover Exploration
+          </button>
+          <button class="m-pill" data-mission="resource_exploration" onclick="selectMainMission('resource_exploration')">
+            ⛏️ Resource & ISRU
+          </button>
+          <button class="m-pill" data-mission="solar_power_and_comm" onclick="selectMainMission('solar_power_and_comm')">
+            ☀️ Solar & Comm Node
+          </button>
+          <button class="m-pill" data-mission="scientific_research" onclick="selectMainMission('scientific_research')">
+            🔬 Scientific Research
+          </button>
+        </div>
+
+        <!-- Live Score & Safety Row -->
+        <div class="main-grading-summary-row">
+          <!-- Score & Grade -->
+          <div class="main-score-box">
+            <div class="main-score-gauge" id="mainScoreGauge">
+              <span class="main-score-num" id="mainScoreNum">--</span>
+              <span class="main-score-max">/ 100</span>
+            </div>
+            <div class="main-grade-box">
+              <span class="main-grade-label">GRADE</span>
+              <span class="main-grade-letter" id="mainGradeLetter">--</span>
+            </div>
+          </div>
+
+          <!-- Mandatory Safety Screening Box -->
+          <div class="main-safety-box">
+            <div class="main-safety-top">
+              <span class="main-safety-title">MANDATORY FLIGHT SAFETY SCREENING</span>
+              <span class="safety-pill" id="mainSafetyPill">CALCULATING...</span>
+            </div>
+            <p class="main-safety-msg" id="mainSafetyMsg">
+              Click anywhere on the lunar surface or fly to target coordinates to run multi-criteria mission safety screening.
+            </p>
+            <div class="main-safety-tags" id="mainSafetyTags"></div>
+          </div>
+
+          <!-- Action Box -->
+          <div class="main-action-box">
+            <button class="primary btn-full-matrix" onclick="openFullGradingFromMain()">
+              OPEN FULL REPORT & COMPARISON →
+            </button>
+            <small class="main-action-sub">Weight customization, pros/cons & multi-site matrix</small>
+          </div>
+        </div>
+
+        <!-- Live Telemetry Grid (4 Key Dimensions) -->
+        <div class="main-metrics-grid">
+          <div class="main-metric-tile">
+            <div class="metric-tile-header">
+              <span class="metric-tile-title">TERRAIN & SLOPE</span>
+              <span class="metric-tile-val" id="mmSlope">--°</span>
+            </div>
+            <div class="metric-tile-sub" id="mmSlopeSub">LOLA Altimetry</div>
+            <div class="metric-tile-bar-bg"><div class="metric-tile-bar-fill" id="mmSlopeBar" style="width: 0%;"></div></div>
+          </div>
+
+          <div class="main-metric-tile">
+            <div class="metric-tile-header">
+              <span class="metric-tile-title">SOLAR DUTY CYCLE</span>
+              <span class="metric-tile-val" id="mmSunlight">--%</span>
+            </div>
+            <div class="metric-tile-sub" id="mmSunlightSub">Topography Masked</div>
+            <div class="metric-tile-bar-bg"><div class="metric-tile-bar-fill" id="mmSunlightBar" style="width: 0%;"></div></div>
+          </div>
+
+          <div class="main-metric-tile">
+            <div class="metric-tile-header">
+              <span class="metric-tile-title">EARTH DTE LINK</span>
+              <span class="metric-tile-val" id="mmComm">--</span>
+            </div>
+            <div class="metric-tile-sub" id="mmCommSub">Clearance Margin</div>
+            <div class="metric-tile-bar-bg"><div class="metric-tile-bar-fill" id="mmCommBar" style="width: 0%;"></div></div>
+          </div>
+
+          <div class="main-metric-tile">
+            <div class="metric-tile-header">
+              <span class="metric-tile-title">THERMAL & VOLATILES</span>
+              <span class="metric-tile-val" id="mmThermal">-- K</span>
+            </div>
+            <div class="metric-tile-sub" id="mmThermalSub">Diviner Radiometer</div>
+            <div class="metric-tile-bar-bg"><div class="metric-tile-bar-fill" id="mmThermalBar" style="width: 0%;"></div></div>
+          </div>
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- ================= SITE ASSESSMENT ================= -->
+
+    <section class="view" id="assessmentView">
+
+      <div class="heading-row">
+
+        <div>
+          <div class="eyebrow">DECISION SUPPORT</div>
+
+          <h1>
+            Site <span>assessment.</span>
+          </h1>
+
+          <p>
+            Validate candidate coordinates before connecting
+            the scientific analysis engine.
+          </p>
+        </div>
+
+        <span class="tag">
+          PROTOTYPE INPUT VALIDATION
+        </span>
+
+      </div>
+
+
+      <section class="panel assessment-panel">
+
+        <div class="panel-title">
+
+          <div>
+            <b>ASSESSMENT INPUT</b>
+            <small>COORDINATE CONFIGURATION</small>
+          </div>
+
+          <span>02</span>
+
+        </div>
+
+
+        <div class="coordinate-fields">
+
+          <label>
+            LATITUDE
+
+            <input
+              id="assessmentLat"
+              type="number"
+              min="-90"
+              max="90"
+              step="any"
+              value="-69.367621"
+            >
+          </label>
+
+          <label>
+            LONGITUDE
+
+            <input
+              id="assessmentLon"
+              type="number"
+              min="-180"
+              max="180"
+              step="any"
+              value="32.348126"
+            >
+          </label>
+
+        </div>
+
+
+        <button class="primary" id="validateBtn">
+          RUN SCIENTIFIC ASSESSMENT ↗
+        </button>
+
+        <div id="validationMessage" class="message">
+          Click above to execute multi-variable landing site evaluation using the JPL DE421 ephemeris engine, solar geometry, and direct-to-Earth communication links.
+        </div>
+
+      </section>
+
+
+      <!-- PLANNED ANALYSIS LAYERS -->
+
+      <section class="panel methodology">
+
+        <div class="panel-title">
+
+          <div>
+            <b>PLANNED ANALYSIS LAYERS</b>
+            <small>DATA SOURCES TO INTEGRATE</small>
+          </div>
+
+        </div>
+
+
+        <div class="layer-grid">
+
+          <article>
+            <b>01 / ELEVATION</b>
+            <p>LOLA digital elevation models.</p>
+          </article>
+
+          <article>
+            <b>02 / SLOPE</b>
+            <p>Terrain gradient derived from elevation.</p>
+          </article>
+
+          <article>
+            <b>03 / ROUGHNESS</b>
+            <p>Local terrain variation and surface texture.</p>
+          </article>
+
+          <article>
+            <b>04 / HAZARDS</b>
+            <p>Crater and boulder detection where imagery resolution permits.</p>
+          </article>
+
+          <article>
+            <b>05 / ILLUMINATION</b>
+            <p>Time-dependent solar geometry.</p>
+          </article>
+
+          <article>
+            <b>06 / THERMAL</b>
+            <p>Diviner observations and thermal context.</p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- NEARBY HISTORICAL EXPLORATION & GROUND TRUTH VALIDATION (MODULE 12) -->
+
+      <section class="panel historical-assessment-panel" id="assessmentHistoricalPanel">
+
+        <div class="panel-title">
+          <div>
+            <b>NEARBY HISTORICAL MISSIONS & GROUND TRUTH VALIDATION</b>
+            <small>MODULE 12 · PROXIMITY HERITAGE & IN-SITU CALIBRATION</small>
+          </div>
+          <span class="live-pill" id="nearbyHistoricalStatusBadge">EXPLORATION INTELLIGENCE</span>
+        </div>
+
+        <!-- Proximity Highlights Grid -->
+        <div class="nearby-summary-grid">
+          <div class="nearby-highlight-card" id="nearestMissionCard">
+            <div class="nh-label">NEAREST HISTORICAL LANDING SITE</div>
+            <div class="nh-title" id="nearestMissionName">Chandrayaan-3 (Vikram / Pragyan)</div>
+            <div class="nh-meta">
+              <span id="nearestMissionSite">Shiv Shakti Point</span> ·
+              <span id="nearestMissionAgency" class="mission-agency-badge isro">ISRO</span> ·
+              <span id="nearestMissionDist" class="nh-distance">0.0 km</span>
+              (<span id="nearestMissionBearing">Exact Site</span>)
+            </div>
+            <p class="nh-desc" id="nearestMissionDesc">
+              First in-situ exploration in the southern high-latitude region. Proved high regolith thermal insulation (ChaSTE), detected elemental sulfur, and confirmed surface bearing stability.
+            </p>
+          </div>
+
+          <div class="nearby-list-card">
+            <div class="nh-label">NEARBY HISTORICAL SURFACE SITES</div>
+            <div class="nearby-missions-mini-list" id="nearbyMissionsMiniList">
+              <div class="mini-item">Loading nearby missions...</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scientific Ground Truth Validation Table -->
+        <div class="validation-section" id="assessmentValidationSection">
+          <div class="validation-table-header">
+            <b>SCIENTIFIC GROUND TRUTH COMPARISON</b>
+            <small id="validationCoverageNotice">COMPARING PLATFORM PREDICTIONS WITH IN-SITU SENSORS</small>
+          </div>
+
+          <div class="validation-table-container">
+            <table class="historical-validation-table">
+              <thead>
+                <tr>
+                  <th>METRIC & GROUND TRUTH SENSOR</th>
+                  <th>OBSERVED IN-SITU</th>
+                  <th>PLATFORM PREDICTED</th>
+                  <th>DELTA</th>
+                  <th>DISTANCE</th>
+                  <th>STATUS</th>
+                </tr>
+              </thead>
+              <tbody id="historicalValidationTableBody">
+                <tr>
+                  <td><b>ChaSTE Regolith Surface Thermal Probe</b><br><small>ISRO ISSDC PRADAN Archive</small></td>
+                  <td>60.0°C (333.1 K)</td>
+                  <td>51.9°C (325.0 K)</td>
+                  <td>8.1 K</td>
+                  <td>0.0 km</td>
+                  <td><span class="val-badge success">EXCELLENT CONVERGENCE</span></td>
+                </tr>
+                <tr>
+                  <td><b>ChaSTE Sub-surface Temperature (-10cm Depth)</b><br><small>ISRO ISSDC / Sivaprasad et al. (2024)</small></td>
+                  <td>-68.0°C (205.2 K)</td>
+                  <td>-63.2°C (210.0 K)</td>
+                  <td>4.8 K</td>
+                  <td>0.0 km</td>
+                  <td><span class="val-badge success">CONFIRMED GROUND TRUTH</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="historical-disclaimer-box">
+            <b>SAFETY & METHODOLOGY DISCLAIMER:</b>
+            <span>Historical mission proximity provides scientific context, ground truth calibration, and heritage evidence, but does not guarantee landing safety for future missions without local slope and hazard clearance.</span>
+          </div>
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- ================= HISTORICAL LUNAR MISSIONS (MODULE 12) ================= -->
+
+    <section class="view" id="missionsView">
+
+      <div class="heading-row">
+        <div>
+          <div class="eyebrow">MODULE 12 · HISTORICAL LUNAR MISSION DATABASE & EXPLORATION INTELLIGENCE</div>
+          <h1>
+            Historical lunar <span>missions.</span>
+          </h1>
+          <p>
+            Authoritative exploration intelligence of 28 lunar landings, scientific instruments, in-situ discoveries, datasets, and ground-truth validation.
+          </p>
+        </div>
+        <div class="catalog-actions-top">
+          <button class="catalog-action-btn" id="openCompareModalBtn" title="Compare any two missions side-by-side">
+            <span>⇄</span> COMPARE MISSIONS
+          </button>
+          <button class="catalog-action-btn" id="flyToSouthPoleBtn" title="Focus Lunar South Pole Region">
+            <span>⌖</span> SOUTH POLE (80°S)
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="historical-metrics-ribbon">
+        <div class="hm-ribbon-item">
+          <small>CATALOG SIZE</small>
+          <b>28 Missions</b>
+        </div>
+        <div class="hm-ribbon-item">
+          <small>GLOBAL COVERAGE</small>
+          <b style="color:#38bdf8;">Nearside, Farside & Poles</b>
+        </div>
+        <div class="hm-ribbon-item">
+          <small>AGENCIES INCLUDED</small>
+          <b>NASA · USSR · ISRO · CNSA · JAXA · CLPS</b>
+        </div>
+        <div class="hm-ribbon-item">
+          <small>VERIFIED TOUCHDOWNS</small>
+          <b style="color:#4ade80;">22 Imaged by LROC NAC</b>
+        </div>
+      </div>
+
+      <!-- Historical Landing Sites Map Bar & Category Legend -->
+      <div class="historical-map-container" id="historicalMapContainer">
+        <div class="historical-map-header">
+          <div class="hm-title">
+            <span class="hm-radar-pulse"></span>
+            <div>
+              <b>GLOBAL LUNAR SURFACE DISTRIBUTION</b>
+              <small>SPATIAL SPREAD ACROSS NEARSIDE, FARSIDE & SOUTH POLE CORRIDORS</small>
+            </div>
+          </div>
+          <div class="historical-legend">
+            <span class="legend-chip"><span class="legend-dot dot-crewed"></span> Crewed</span>
+            <span class="legend-chip"><span class="legend-dot dot-polar"></span> South Pole</span>
+            <span class="legend-chip"><span class="legend-dot dot-sample"></span> Sample Return</span>
+            <span class="legend-chip"><span class="legend-dot dot-rover"></span> Lander / Rover</span>
+            <span class="legend-chip"><span class="legend-dot dot-commercial"></span> CLPS Commercial</span>
+          </div>
+        </div>
+        <!-- 2D Interactive Landing Distribution Strip Canvas -->
+        <div class="historical-map-canvas-wrap">
+          <canvas id="historicalMoonMapCanvas" width="1000" height="230"></canvas>
+          <div id="historicalMapHoverTooltip" class="hm-map-tooltip" hidden></div>
+        </div>
+      </div>
+
+      <!-- Modern Aerospace Control Bar -->
+      <div class="historical-controls-panel">
+        <!-- Top Search Row -->
+        <div class="historical-search-row">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="historicalSearchInput"
+              placeholder="Search 28 missions by name, site, payload (ChaSTE, ALSEP, LIBS...), rover, or discovery..."
+            >
+            <button id="clearSearchBtn" class="clear-search-btn" title="Clear search">✕</button>
+          </div>
+          <div class="search-actions-right">
+            <button class="catalog-action-btn toggle-radar-btn" id="toggleMapBtn" title="Toggle 2D Landing Distribution Map">
+              <span id="toggleMapIcon">🗺️</span> <span id="toggleMapText">HIDE RADAR MAP</span>
+            </button>
+            <span class="catalog-counter-badge" id="catalogCounterBadge">SHOWING 28 / 28 MISSIONS</span>
+          </div>
+        </div>
+
+        <!-- Agency Filter Tabs (Segmented bar) -->
+        <div class="agency-segmented-bar" id="agencyFilterGroup">
+          <button class="f-pill agency-tab active" data-filter="agency" data-val="all">
+            <span class="at-icon">🌐</span> ALL MISSIONS
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="NASA">
+            <span class="at-icon">🇺🇸</span> NASA
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="ISRO">
+            <span class="at-icon">🇮🇳</span> ISRO
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="USSR">
+            <span class="at-icon">🇷🇺</span> USSR / Lavochkin
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="CNSA">
+            <span class="at-icon">🇨🇳</span> CNSA
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="JAXA">
+            <span class="at-icon">🇯🇵</span> JAXA
+          </button>
+          <button class="f-pill agency-tab" data-filter="agency" data-val="Commercial">
+            <span class="at-icon">🚀</span> CLPS Commercial
+          </button>
+        </div>
+
+        <!-- Secondary Filter Dropdowns Row -->
+        <div class="secondary-filters-row">
+          <div class="select-filter-item">
+            <label for="eraFilterSelect">MISSION ERA</label>
+            <select id="eraFilterSelect" class="f-select" data-filter="era">
+              <option value="all">All Eras (1966 – Present)</option>
+              <option value="Space Race">Space Race (1966–1976)</option>
+              <option value="Lunar Renaissance">Lunar Renaissance (2013–2024)</option>
+              <option value="Commercial / Artemis Era">Commercial / Artemis Era (2024+)</option>
+            </select>
+          </div>
+
+          <div class="select-filter-item">
+            <label for="typeFilterSelect">MISSION TYPE</label>
+            <select id="typeFilterSelect" class="f-select" data-filter="type">
+              <option value="all">All Mission Types</option>
+              <option value="Crewed Landing">Crewed Landing (Apollo)</option>
+              <option value="Lander / Rover">Lander & Rover</option>
+              <option value="Sample Return">Robotic Sample Return</option>
+              <option value="Robotic Soft Lander">Robotic Soft Lander</option>
+              <option value="Commercial Lander">Commercial Lander (CLPS)</option>
+            </select>
+          </div>
+
+          <div class="select-filter-item">
+            <label for="regionFilterSelect">LUNAR REGION</label>
+            <select id="regionFilterSelect" class="f-select" data-filter="region">
+              <option value="all">All Regions</option>
+              <option value="South Pole">South Pole / Polar Corridors</option>
+              <option value="Nearside Maria">Nearside Maria Basins</option>
+              <option value="Nearside Highlands">Nearside Highlands</option>
+              <option value="Farside">Farside (SPA Basin)</option>
+            </select>
+          </div>
+
+          <button id="resetFiltersBtn" class="reset-filters-btn" type="button" title="Reset all search filters">
+            ↺ RESET FILTERS
+          </button>
+        </div>
+      </div>
+
+      <!-- Missions Grid -->
+      <div class="missions-grid" id="missionsGrid">
+        <div class="missions-loading">Loading historical lunar missions from scientific database...</div>
+      </div>
+
+    </section>
+
+
+    <!-- ================= SAVED LANDING SITES ================= -->
+
+    <section class="view" id="savedSitesView">
+
+      <div class="heading-row">
+        <div>
+          <div class="eyebrow">USER CANDIDATE SITES</div>
+          <h1>
+            Saved landing <span>sites.</span>
+          </h1>
+          <p>
+            Manage custom bookmarked lunar locations, operational candidate corridors, and mission targets.
+          </p>
+        </div>
+      </div>
+
+      <section class="panel saved-form-panel">
+        <div class="panel-title">
+          <div>
+            <b>BOOKMARK NEW LANDING TARGET</b>
+            <small>STORE TO LUNASITE DATABASE</small>
+          </div>
+          <span>SAVE</span>
+        </div>
+
+        <form id="saveSiteForm" class="save-site-form">
+          <div class="coordinate-fields">
+            <label>
+              TARGET NAME
+              <input id="saveSiteName" type="text" placeholder="e.g. Shackleton Ridge Alpha" required>
+            </label>
+            <label>
+              LATITUDE
+              <input id="saveSiteLat" type="number" min="-90" max="90" step="any" placeholder="-89.44" required>
+            </label>
+            <label>
+              LONGITUDE
+              <input id="saveSiteLon" type="number" min="-180" max="180" step="any" placeholder="222.05" required>
+            </label>
+          </div>
+          <label style="margin-top:10px; display:block;">
+            OPERATIONAL NOTES
+            <input id="saveSiteNotes" type="text" placeholder="e.g. High annual solar illumination, near PSR water ice">
+          </label>
+          <button type="submit" class="primary" style="margin-top:14px;">
+            + SAVE TARGET TO DATABASE
+          </button>
+        </form>
+      </section>
+
+      <section class="panel saved-list-panel">
+        <div class="panel-title">
+          <div>
+            <b>SAVED CANDIDATE TARGETS</b>
+            <small id="savedSitesCount">0 TARGETS SAVED</small>
+          </div>
+        </div>
+        <div class="saved-sites-list" id="savedSitesList">
+          <p style="color:#718294; font-size:11px;">Loading saved sites...</p>
+        </div>
+      </section>
+
+    </section>
+
+
+    <!-- ================= DATA & METHODOLOGY ================= -->
+
+    <section class="view" id="aboutView">
+
+      <div class="heading-row">
+
+        <div>
+          <div class="eyebrow">SCIENTIFIC INPUTS</div>
+
+          <h1>
+            Data & <span>methodology.</span>
+          </h1>
+
+          <p>
+            Datasets and tools planned for the LunaSite research workflow.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="dataset-grid">
+
+        <a
+          class="dataset"
+          href="https://trek.nasa.gov/moon/"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>TERRAIN, LIGHTING & COMM</small>
+          <b>MOON TREK</b>
+          <p>NASA planetary GIS: lunar terrain, lighting, and communication line-of-sight analysis.</p>
+          <em>NASA TREK PORTAL ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://quickmap.lroc.asu.edu/"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>SCIENTIFIC EXPLORATION</small>
+          <b>QUICKMAP</b>
+          <p>LROC scientific lunar maps, multi-sensor layers, and topographic data exploration.</p>
+          <em>ACT-REACT QUICKMAP ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://cesium.com/platform/cesiumjs/"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>3D TERRAIN VISIBILITY</small>
+          <b>CMS / CESIUM</b>
+          <p>Celestial Mapping System: 3D Moon model, horizon line-of-sight, and elevation profiles.</p>
+          <em>CESIUM ION 3D TILES ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://ssd.jpl.nasa.gov/horizons/"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>ASTRONOMICAL EPHEMERIS</small>
+          <b>JPL HORIZONS</b>
+          <p>Calculates high-precision topocentric Sun and Earth vectors in the MOON_ME frame via DE421.</p>
+          <em>JPL SSD / NAIF ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://pds-geosciences.wustl.edu/missions/lro/lola.htm"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>ALTIMETRY / TOPOGRAPHY</small>
+          <b>LOLA DEM / DSM</b>
+          <p>80m/px South Pole DEM GeoTIFFs, slope gradients, and 25-point cross-section crater relief.</p>
+          <em>PDS GEOSCIENCES ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="#assessment"
+          onclick="document.querySelector('[data-view=\'assessment\']').click(); return false;"
+        >
+          <small>SUITABILITY ALGORITHM</small>
+          <b>SCORING ENGINE</b>
+          <p>Multi-variable decision support: illumination, direct-to-Earth telemetry, and slope safety.</p>
+          <em>FASTAPI PYTHON BACKEND ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://wms.lroc.asu.edu/lroc"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>LUNAR IMAGING</small>
+          <b>LROC WAC</b>
+          <p>Orbital global mosaics at 303 PPD for surface context, crater geomorphology, and hazard study.</p>
+          <em>OPEN LROC WMS ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://pds-geosciences.wustl.edu/missions/lro/diviner.htm"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>THERMAL OBSERVATIONS</small>
+          <b>DIVINER</b>
+          <p>Surface temperatures and cryogenic volatile trapping stability across polar craters.</p>
+          <em>OPEN ARCHIVE ↗</em>
+        </a>
+
+        <a
+          class="dataset"
+          href="https://pradan.issdc.gov.in/ch3/"
+          target="_blank"
+          rel="noopener"
+        >
+          <small>MISSION GROUND TRUTH</small>
+          <b>CHANDRAYAAN-3</b>
+          <p>ISRO South Pole ground truth science and Shiv Shakti Point (-69.368° S, 32.348° E) calibration.</p>
+          <em>OPEN PRADAN ↗</em>
+        </a>
+
+      </div>
+
+
+      <div class="warning">
+        A Cesium ion lunar visualization is a visualization asset,
+        not automatically a scientific terrain dataset. Confirm the
+        asset's source, coordinate reference, units, scale and metadata
+        before deriving measurements.
+      </div>
+
+    </section>
+
+
+    <!-- ================= MISSION GRADING & DECISION SUPPORT ================= -->
+
+    <section class="view" id="gradingView">
+
+      <div class="heading-row">
+        <div>
+          <div class="eyebrow">MISSION-SPECIFIC DECISION SUPPORT</div>
+          <h1>
+            Mission <span>grading.</span>
+          </h1>
+          <p>
+            Deterministic suitability scoring, mandatory safety constraints,
+            pros & cons findings, and multi-site comparison across mission profiles.
+          </p>
+        </div>
+        <span class="tag">
+          SCIENTIFIC GRADING ENGINE v2.0
+        </span>
+      </div>
+
+      <!-- Location Input Bar -->
+      <section class="panel grading-location-panel">
+        <div class="panel-title">
+          <div>
+            <b>EVALUATION TARGET</b>
+            <small>COORDINATES & DATA COVERAGE</small>
+          </div>
+          <span id="gradingTargetStatus">READY</span>
+        </div>
+
+        <div class="grading-location-bar">
+          <div class="location-display">
+            <span class="location-label">SELECTED SITE:</span>
+            <b id="gradingLatLon" class="mono">No location selected</b>
+          </div>
+          <div class="grading-controls">
+            <label class="coord-label">
+              LAT
+              <input type="number" id="gradingLat" placeholder="-89.440" min="-90" max="90" step="0.001" class="coord-input">
+            </label>
+            <label class="coord-label">
+              LON
+              <input type="number" id="gradingLon" placeholder="222.050" min="-180" max="360" step="0.001" class="coord-input">
+            </label>
+            <button class="primary" id="gradingAnalyzeBtn" onclick="runGradingFromInputs()">
+              ANALYZE & GRADE
+            </button>
+            <button class="secondary" onclick="useCurrentExplorerTarget()">
+              USE EXPLORER PIN
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Profile Selector -->
+      <div class="grading-section-header">
+        <span class="sec-pill">STEP 01</span>
+        <b>SELECT MISSION PROFILE</b>
+      </div>
+      <div class="mission-cards-grid" id="missionProfileCards">
+        <!-- Populated dynamically by JS -->
+      </div>
+
+      <!-- Custom Weights Panel -->
+      <section class="panel custom-weights-panel" id="customWeightsPanel" style="display: none;">
+        <div class="panel-title">
+          <div>
+            <b>CUSTOM MISSION WEIGHT CONFIGURATION</b>
+            <small>ADJUST CRITERIA INFLUENCE (PROTOTYPE DEFAULTS)</small>
+          </div>
+          <button class="secondary btn-sm" onclick="resetCustomWeights()">RESET WEIGHTS</button>
+        </div>
+        <div id="customWeightsSliders" class="custom-sliders-grid"></div>
+        <div class="weights-total-bar">
+          <span>Total Normalized Weight: <strong id="weightsTotalDisplay">100%</strong></span>
+          <button class="primary btn-sm" onclick="saveCurrentCustomProfile()">SAVE AS CUSTOM PROFILE</button>
+        </div>
+      </section>
+
+      <!-- Grading Results Dashboard -->
+      <div id="gradeDashboard" style="display: none;">
+
+        <!-- EXECUTIVE MISSION DECISION VERDICT -->
+        <div id="executiveVerdictWrap" class="executive-verdict-wrap"></div>
+
+        <div class="grading-section-header">
+          <span class="sec-pill">STEP 02</span>
+          <b>SUITABILITY SCORE & SAFETY SCREENING CHECKLIST</b>
+        </div>
+
+        <!-- Score Badge & Safety Banner -->
+        <div class="grade-banner-grid">
+          <!-- Overall Score Card -->
+          <div class="grade-score-card">
+            <span class="score-card-title">OVERALL SUITABILITY</span>
+            <div class="score-circle-outer" id="scoreCircle">
+              <div class="score-circle-inner">
+                <span class="score-number" id="scoreValue">--</span>
+                <span class="score-max">/ 100</span>
+              </div>
+            </div>
+            <div class="grade-letter-wrap">
+              <span class="grade-label">COMPOSITE GRADE</span>
+              <span class="grade-letter" id="gradeBadge">--</span>
+              <span class="grade-desc-sub" id="gradeDescSub">--</span>
+            </div>
+          </div>
+
+          <!-- Mandatory Safety Screening Card -->
+          <div class="safety-screening-card">
+            <div class="safety-header-row">
+              <div>
+                <span class="safety-title">MANDATORY FLIGHT SAFETY SCREENING</span>
+                <small class="safety-sub-label">NASA / MISSION CRITICAL CONSTRAINTS (ZERO-TOLERANCE OVERRIDE)</small>
+              </div>
+              <span class="safety-pill" id="safetyBadge">SCREENING PENDING</span>
+            </div>
+            <div class="safety-checks-list" id="safetyChecks"></div>
+          </div>
+
+          <!-- Data Coverage & Quality Card -->
+          <div class="coverage-card">
+            <span class="cov-title">DATA CONFIDENCE & COVERAGE</span>
+            <div class="cov-progress-bg">
+              <div class="cov-progress-fill" id="coverageBar" style="width: 0%;"></div>
+            </div>
+            <div class="cov-stats">
+              <span id="coveragePct" class="mono">--%</span>
+              <small>PARAMETERS OBSERVED</small>
+            </div>
+            <div id="polarHighResBadge" class="highres-badge"></div>
+            <div class="cov-models-list">
+              <span>• LOLA 80S Polar DEM / Altimetry</span>
+              <span>• Diviner Lunar Radiometer</span>
+              <span>• JPL DE421 Planetary Ephemeris</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-Mission Score Comparison -->
+        <div class="grading-section-header">
+          <span class="sec-pill">STEP 03</span>
+          <b>ALL-MISSION PROFILE COMPARISON & RANKING</b>
+        </div>
+        <div class="all-missions-panel" id="multiMissionPanel">
+          <div class="all-missions-header">
+            <span>MISSION OBJECTIVE</span>
+            <span>SUITABILITY RATING</span>
+            <span>SCORE</span>
+            <span>FLIGHT CLEARANCE</span>
+          </div>
+          <div class="all-missions-bars" id="missionBars"></div>
+        </div>
+
+        <!-- Parameter Scores Breakdown -->
+        <div class="grading-section-header">
+          <span class="sec-pill">STEP 04</span>
+          <b>DETAILED CRITERIA BREAKDOWN & WEIGHTED CONTRIBUTION</b>
+        </div>
+        <div class="panel param-scores-panel">
+          <div class="param-table-wrap">
+            <div class="param-scores-table" id="paramScoresTable"></div>
+          </div>
+        </div>
+
+        <!-- Pros, Cons, and Operational Risks (Dual View) -->
+        <div class="grading-section-header">
+          <span class="sec-pill">STEP 05</span>
+          <b>SCIENTIFIC FINDINGS & OPERATIONAL RISK ASSESSMENT</b>
+        </div>
+        <div class="findings-dual-grid">
+          <div class="findings-column pros-col">
+            <div class="findings-col-header">
+              <span class="col-icon">🟢</span>
+              <div>
+                <b>PROS, ADVANTAGES & OPPORTUNITIES</b>
+                <small>FAVORABLE TERRAIN, ILLUMINATION & SCIENTIFIC ASSETS</small>
+              </div>
+            </div>
+            <div id="prosFindingsList" class="findings-stack"></div>
+          </div>
+
+          <div class="findings-column cons-col">
+            <div class="findings-col-header">
+              <span class="col-icon">🔴</span>
+              <div>
+                <b>CONS, HAZARDS & OPERATIONAL RISKS</b>
+                <small>ENVIRONMENTAL STRESS, SLOPES & COMMUNICATION CONSTRAINTS</small>
+              </div>
+            </div>
+            <div id="consRisksList" class="findings-stack"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Multi-Site Comparison Section -->
+      <div class="grading-section-header">
+        <span class="sec-pill">STEP 07</span>
+        <b>MULTI-SITE COMPARISON</b>
+      </div>
+      <section class="panel comparison-panel">
+        <div class="panel-title">
+          <div>
+            <b>SIDE-BY-SIDE SITE EVALUATION</b>
+            <small>COMPARE MULTIPLE CANDIDATE LANDING LOCATIONS</small>
+          </div>
+          <span id="compSiteCount">0 SITES</span>
+        </div>
+        <div class="comparison-bar">
+          <div id="comparisonSitesList" class="comparison-tags"></div>
+          <div class="comparison-actions">
+            <button class="secondary" onclick="addCurrentSiteToComparison()">+ ADD CURRENT SITE</button>
+            <button class="secondary" onclick="addPresetSitesForComparison()">LOAD BENCHMARK SITES</button>
+            <button class="primary" onclick="runSiteComparison()">RUN COMPARISON</button>
+          </div>
+        </div>
+        <div id="comparisonTableWrap" class="comparison-table-container" style="display: none;"></div>
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= MISSION DOSSIER MODAL (MODULE 12) ================= -->
+
+  <div class="modal-backdrop" id="missionDossierModal" hidden>
+    <div class="modal-container dossier-modal">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-eyebrow" id="dossierEyebrow">MODULE 12 · MISSION DOSSIER</div>
+          <h2 id="dossierTitle">Chandrayaan-3 (Vikram / Pragyan)</h2>
+          <div class="dossier-badges">
+            <span class="d-pill agency" id="dossierAgencyBadge">ISRO</span>
+            <span class="d-pill outcome" id="dossierOutcomeBadge">SUCCESS</span>
+            <span class="d-pill status" id="dossierVerifyBadge">VERIFIED (LROC NAC)</span>
+            <span class="d-pill type" id="dossierTypeBadge">LANDER / ROVER</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeDossierBtn" title="Close dossier">✕</button>
+      </div>
+
+      <div class="modal-body dossier-body">
+        <!-- Telemetry & Location Grid -->
+        <div class="dossier-grid">
+          <div class="d-cell">
+            <small>TOUCHDOWN SITE</small>
+            <b id="dossierSiteName">Shiv Shakti Point</b>
+          </div>
+          <div class="d-cell">
+            <small>COORDINATES (LAT / LON)</small>
+            <b id="dossierCoords">-69.367621° S, 32.348126° E</b>
+          </div>
+          <div class="d-cell">
+            <small>COORDINATE REFERENCE SYSTEM</small>
+            <b id="dossierCRS">Mean Earth/Polar Axis (MOON_ME_DE421)</b>
+          </div>
+          <div class="d-cell">
+            <small>UNCERTAINTY / ACCURACY</small>
+            <b id="dossierAccuracy">±5 m (LROC NAC M1449830500LR)</b>
+          </div>
+          <div class="d-cell">
+            <small>TOUCHDOWN DATE</small>
+            <b id="dossierLandingDate">23 August 2023</b>
+          </div>
+          <div class="d-cell">
+            <small>LAUNCH DATE</small>
+            <b id="dossierLaunchDate">14 July 2023</b>
+          </div>
+          <div class="d-cell">
+            <small>LUNAR REGION</small>
+            <b id="dossierRegion">South Pole / Polar</b>
+          </div>
+          <div class="d-cell">
+            <small>SAMPLES / DISTANCE</small>
+            <b id="dossierMobility">Traversed 103 m (No sample return)</b>
+          </div>
+        </div>
+
+        <!-- Hardware & Spacecraft -->
+        <div class="dossier-section">
+          <div class="ds-title">LANDER & ROVER HARDWARE SPECIFICATIONS</div>
+          <p id="dossierHardware" class="ds-text">Vikram Lander with 4 throttleable engines + Pragyan Rover.</p>
+        </div>
+
+        <!-- Scientific Payload Table -->
+        <div class="dossier-section">
+          <div class="ds-title">SCIENTIFIC INSTRUMENTS & PAYLOAD SUITE</div>
+          <div class="dossier-table-wrap">
+            <table class="dossier-table">
+              <thead>
+                <tr>
+                  <th>INSTRUMENT NAME</th>
+                  <th>SCIENTIFIC ROLE & MEASUREMENT DOMAIN</th>
+                </tr>
+              </thead>
+              <tbody id="dossierInstrumentsTbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- In-Situ Scientific Discoveries -->
+        <div class="dossier-section">
+          <div class="ds-title">IN-SITU SCIENTIFIC OBSERVATIONS & DISCOVERIES</div>
+          <div id="dossierObservations" class="ds-highlight-box"></div>
+        </div>
+
+        <!-- Traceable Datasets & Sources -->
+        <div class="dossier-section">
+          <div class="ds-title">ACCESSIBLE SCIENTIFIC DATASETS & TRACEABLE REPOSITORIES</div>
+          <div class="datasets-pill-list" id="dossierDatasetsList"></div>
+        </div>
+
+        <!-- Source & Reliability -->
+        <div class="dossier-source-box">
+          <div>
+            <b>ORIGINAL SOURCE:</b> <span id="dossierOriginalSource">ISRO Official Announcement / IAU WGPSN</span>
+          </div>
+          <div>
+            <b>SOURCE RELIABILITY:</b> <span id="dossierReliability">Authoritative Space Agency / Canonical Ground Truth</span>
+          </div>
+          <div class="ds-notes" id="dossierNotes"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary" id="dossierCompareBtn">⇄ COMPARE WITH ANOTHER MISSION</button>
+        <button class="primary" id="dossierFlyBtn">FLY TO SITE IN 3D ↗</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= HISTORICAL MISSION COMPARISON MODAL (MODULE 12) ================= -->
+
+  <div class="modal-backdrop" id="historicalCompareModal" hidden>
+    <div class="modal-container compare-modal">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-eyebrow">MODULE 12 · COMPARATIVE EXPLORATION INTELLIGENCE</div>
+          <h2>Side-by-Side Historical Mission Comparison</h2>
+        </div>
+        <button class="modal-close-btn" id="closeCompareModalBtn" title="Close comparison">✕</button>
+      </div>
+
+      <div class="modal-body compare-body">
+        <!-- Mission Selectors Row -->
+        <div class="compare-selectors-row">
+          <div class="comp-col-selector">
+            <label>MISSION A:</label>
+            <select id="compareSelectA" class="compare-select"></select>
+          </div>
+          <div class="comp-vs-badge">VS</div>
+          <div class="comp-col-selector">
+            <label>MISSION B:</label>
+            <select id="compareSelectB" class="compare-select"></select>
+          </div>
+        </div>
+
+        <!-- Distance Between Sites Banner -->
+        <div class="compare-distance-banner" id="compareDistanceBanner">
+          <span>SPHERICAL SURFACE SEPARATION:</span>
+          <b id="compareDistanceVal">2,131.7 km</b>
+        </div>
+
+        <!-- Comparison Matrix Table -->
+        <div class="comparison-matrix-wrap">
+          <table class="comparison-matrix-table" id="comparisonMatrixTable">
+            <thead>
+              <tr>
+                <th style="width:25%;">METRIC / PROPERTY</th>
+                <th style="width:37.5%;" id="compThA">Chandrayaan-3</th>
+                <th style="width:37.5%;" id="compThB">Apollo 11</th>
+              </tr>
+            </thead>
+            <tbody id="comparisonMatrixTbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="secondary" id="compareFlyABtn">FLY TO MISSION A ↗</button>
+        <button class="secondary" id="compareFlyBBtn">FLY TO MISSION B ↗</button>
+        <button class="primary" id="closeCompareFooterBtn">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= TOAST ================= -->
+
+  <div class="toast" id="toast"></div>
+
+
+  <!-- ================= PROJECT SCRIPTS ================= -->
+
+  <script src="config.js?v=4.1"></script>
+  <script src="app.js?v=5.7"></script>
+
+</body>
+</html>

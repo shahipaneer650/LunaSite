@@ -1,0 +1,1669 @@
+[
+  {
+    "id": "luna-9",
+    "name": "Luna 9",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1966-01-31",
+    "landing_date": "1966-02-03",
+    "latitude_deg": 7.08,
+    "longitude_deg": -64.37,
+    "site_name": "Oceanus Procellarum (Planitia Descensus)",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "Mean Earth/Polar Axis (MOON_ME_DE421)",
+    "coordinate_accuracy": "\u00b110 km (Telemetric landing ellipse; hardware not unambiguously identified in LROC)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "E-6 No.13 hermetic instrument sphere (99 kg) with 4 deployable petal antennas",
+    "scientific_instruments": [
+      {
+        "name": "Television System",
+        "role": "Rotating panoramic telephotometer camera"
+      },
+      {
+        "name": "SBM-10 Radiation Detector",
+        "role": "Gas-discharge counter measuring cosmic radiation"
+      }
+    ],
+    "scientific_observations": "First panoramic photographs returned from the surface of another celestial body; proved that lunar regolith possesses mechanical load-bearing capacity (>10 kPa), conclusively disproving the catastrophic dust ocean hypothesis; measured background surface radiation dose of 30 mrad/day.",
+    "available_datasets": [
+      {
+        "name": "Soviet Lunar Exploration Archive",
+        "source": "IKI / RAS",
+        "type": "Telemetry & Panoramas",
+        "url": "http://mentallandscape.com/C_CatalogMoon.htm"
+      },
+      {
+        "name": "NASA NSSDCA Master Catalog (Luna 9)",
+        "source": "NASA NSSDC",
+        "type": "Mission Metadata",
+        "url": "https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1966-006A"
+      }
+    ],
+    "original_source": "Soviet Academy of Sciences (1966) / NASA NSSDCA ID 1966-006A",
+    "source_reliability": "Authoritative Space Agency",
+    "verification_status": "Partially Verified",
+    "notes_and_limitations": "First survivable soft touchdown on the Moon. Petals deployed 250s after impact cushion landing. Transmitted for 3 days until battery exhaustion.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "bearing_strength_kpa": 15.0,
+      "surface_radiation_mrad_day": 30.0
+    }
+  },
+  {
+    "id": "surveyor-1",
+    "name": "Surveyor 1",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "launch_date": "1966-05-30",
+    "landing_date": "1966-06-02",
+    "latitude_deg": -2.4745,
+    "longitude_deg": -43.3399,
+    "site_name": "Flamsteed Crater, Oceanus Procellarum",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M102443991LE)",
+    "coordinate_accuracy": "\u00b15 m (Sub-meter optical confirmation by LROC NAC)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Surveyor tripod frame lander with 3 aluminum crushable footpads (294 kg on surface)",
+    "scientific_instruments": [
+      {
+        "name": "Vidicon Television System",
+        "role": "Variable focus, azimuth/elevation mirror scanning TV system"
+      },
+      {
+        "name": "Dynamic Strain Gauges",
+        "role": "Measured landing deceleration dynamics and footpad penetration"
+      }
+    ],
+    "scientific_observations": "First American soft lunar landing; returned 11,237 high-resolution television images; demonstrated surface soil load-bearing capacity of 30-50 kPa, verifying lunar terrain stability for Apollo astronaut landings; monitored lunar surface thermal decline during sunset.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences Node (Surveyor 1)",
+        "source": "NASA PDS",
+        "type": "Photographic & Engineering",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "LROC Targeted Observation M102443991LE",
+        "source": "LROC PDS",
+        "type": "Sub-meter Orbital Imagery",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "JPL Technical Report 32-1262 (Surveyor Project Final Report) / Wagner et al. (2017)",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Planetary Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Operated through first lunar night until July 13, 1966. Confirmed smooth mare terrain safety.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "bearing_strength_kpa": 40.0,
+      "soil_cohesion_kpa": 0.1
+    }
+  },
+  {
+    "id": "luna-13",
+    "name": "Luna 13",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1966-12-21",
+    "landing_date": "1966-12-24",
+    "latitude_deg": 18.87,
+    "longitude_deg": -62.05,
+    "site_name": "Oceanus Procellarum",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "Mean Earth/Polar Axis (MOON_ME_DE421)",
+    "coordinate_accuracy": "\u00b15 km (Telemetric estimate)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "E-6M No.205 lander capsule (113 kg) with deployable instrument booms",
+    "scientific_instruments": [
+      {
+        "name": "Mechanical Penetrometer (PROP)",
+        "role": "Pyrotechnic impulse rod penetrometer measuring soil resistance"
+      },
+      {
+        "name": "Gamma-Ray Densitometer",
+        "role": "Soil density backscattering measurement probe"
+      },
+      {
+        "name": "Panoramic TV Cameras",
+        "role": "Twin telephotometer panoramic cameras"
+      }
+    ],
+    "scientific_observations": "Conducted first in-situ mechanical penetration and radiation density probing of lunar soil; determined regolith bulk density to be 0.8-1.5 g/cm\u00b3 and mechanical bearing resistance to 20 cm depth; transmitted 5 distinct panoramic sweeps under changing solar elevation.",
+    "available_datasets": [
+      {
+        "name": "Soviet Lunar Exploration Archive",
+        "source": "IKI / RAS",
+        "type": "Telemetry & Soil Data",
+        "url": "http://mentallandscape.com/"
+      },
+      {
+        "name": "NASA NSSDCA Master Catalog (Luna 13)",
+        "source": "NASA NSSDC",
+        "type": "Mission Metadata",
+        "url": "https://nssdc.gsfc.nasa.gov/"
+      }
+    ],
+    "original_source": "Soviet Academy of Sciences (1967) / Cherkasov et al., Soil Mechanics on the Moon",
+    "source_reliability": "Authoritative Space Agency",
+    "verification_status": "Partially Verified",
+    "notes_and_limitations": "Operated until December 28, 1966. Proved lunar upper regolith is lightly compacted at the surface and densifies rapidly with depth.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "regolith_bulk_density_g_cm3": 1.15,
+      "penetration_depth_cm": 21.0
+    }
+  },
+  {
+    "id": "surveyor-3",
+    "name": "Surveyor 3",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "launch_date": "1967-04-17",
+    "landing_date": "1967-04-20",
+    "latitude_deg": -3.016,
+    "longitude_deg": -23.418,
+    "site_name": "Surveyor Crater, Oceanus Procellarum",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Apollo 12 Ground Truth",
+    "coordinate_accuracy": "\u00b11 m (Inspected on foot by Apollo 12 crew; LROC NAC M104662862R)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Surveyor frame lander with motorized pantograph soil scoop mechanism",
+    "scientific_instruments": [
+      {
+        "name": "Surface Sampler Mechanism",
+        "role": "Motorized scoop capable of digging trenches up to 18 cm deep"
+      },
+      {
+        "name": "Vidicon Television System",
+        "role": "Panoramic and surface inspection imaging"
+      }
+    ],
+    "scientific_observations": "First robotic excavation and trenching of lunar regolith; excavated 4 trenches up to 18 cm deep, testing cohesion and bearing strength; returned 6,315 television images; visited in November 1969 by Apollo 12 astronauts Conrad and Bean, who removed the camera and scoop for terrestrial lab examination (evaluating long-term micro-meteoroid and radiation wear).",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Surveyor 3)",
+        "source": "NASA PDS",
+        "type": "Trenching & Engineering",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "Apollo 12 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Astronaut In-Situ Logs",
+        "url": "https://www.hq.nasa.gov/alsj/"
+      }
+    ],
+    "original_source": "NASA SP-184 (Surveyor 3 Preliminary Science Report) / Apollo 12 Mission Report",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed inside a 200m crater on a 12\u00b0 slope. Bounced twice upon landing due to delayed radar engine cutoff.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "trench_depth_cm": 18.0,
+      "soil_bearing_capacity_kpa": 45.0
+    }
+  },
+  {
+    "id": "surveyor-5",
+    "name": "Surveyor 5",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "launch_date": "1967-09-08",
+    "landing_date": "1967-09-11",
+    "latitude_deg": 1.461,
+    "longitude_deg": 23.195,
+    "site_name": "Mare Tranquillitatis",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M129994645LE)",
+    "coordinate_accuracy": "\u00b15 m (Resolved inside 8-meter crater on LROC NAC)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Surveyor frame lander equipped with alpha-scattering chemical analyzer",
+    "scientific_instruments": [
+      {
+        "name": "Alpha-Scattering Surface Analyzer",
+        "role": "Curium-242 source measuring alpha particle backscatter and proton reactions"
+      },
+      {
+        "name": "Television Camera System",
+        "role": "Panoramic high-resolution imaging"
+      },
+      {
+        "name": "Magnet Assembly",
+        "role": "Magnetic bar on footpad measuring iron content"
+      }
+    ],
+    "scientific_observations": "Conducted the first in-situ chemical compositional analysis of the Moon; determined mare regolith is volcanic basalt rich in silicon (58-65 atom%), oxygen, aluminum, with ~3% titanium; conducted vernier engine blast firing on the surface to assess rocket plume regolith erosion; returned 19,049 TV frames.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Surveyor 5 Alpha Scattering)",
+        "source": "NASA PDS",
+        "type": "Geochemistry",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "LROC Featured Image (Surveyor 5)",
+        "source": "LROC ASU",
+        "type": "Orbital NAC Imagery",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Turkevich et al. (1968), Science / NASA SP-173",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Overcame a critical mid-course helium leak; landed on a 20\u00b0 slope inside an 8-meter rimless crater in Mare Tranquillitatis.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "silicon_oxide_wt_percent": 45.0,
+      "titanium_oxide_wt_percent": 3.4
+    }
+  },
+  {
+    "id": "surveyor-6",
+    "name": "Surveyor 6",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "launch_date": "1967-11-07",
+    "landing_date": "1967-11-10",
+    "latitude_deg": 0.474,
+    "longitude_deg": -1.48,
+    "site_name": "Sinus Medii (Central Bay)",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M119566974RE)",
+    "coordinate_accuracy": "\u00b15 m (Resolved with hop depression on LROC NAC)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Surveyor frame lander with restartable vernier propulsion",
+    "scientific_instruments": [
+      {
+        "name": "Alpha-Scattering Surface Analyzer",
+        "role": "In-situ elemental chemical analysis"
+      },
+      {
+        "name": "Television Camera System",
+        "role": "High-resolution panoramic photography"
+      },
+      {
+        "name": "Magnetic Footpad Bar",
+        "role": "Assessed magnetic mineral concentration"
+      }
+    ],
+    "scientific_observations": "Confirmed mare basalt composition in central nearside disk; executed first lunar surface liftoff and hop on Nov 17, 1967 (fired engines for 2.5 sec, hopped 2.5 meters away and landed safely), providing stereoscopic imaging of original footprints and evaluating rocket dynamics.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Surveyor 6)",
+        "source": "NASA PDS",
+        "type": "Geochemistry & Imagery",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "LROC Featured Image (Surveyor 6 Hop)",
+        "source": "LROC ASU",
+        "type": "Orbital NAC Imagery",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "JPL Technical Report 32-1262 / NASA SP-166",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Verified Sinus Medii equatorial candidate corridor for early Apollo missions.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0025,
+    "ground_truth_observations": {
+      "surface_hop_distance_m": 2.5,
+      "silicon_oxide_wt_percent": 46.5
+    }
+  },
+  {
+    "id": "surveyor-7",
+    "name": "Surveyor 7",
+    "agency": "NASA / JPL",
+    "country": "USA",
+    "launch_date": "1968-01-07",
+    "landing_date": "1968-01-10",
+    "latitude_deg": -40.857,
+    "longitude_deg": -11.47,
+    "site_name": "Tycho Crater Rim Ejecta Blanket",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M119588661LE)",
+    "coordinate_accuracy": "\u00b15 m (Resolved on rugged Tycho ejecta by LROC NAC)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Surveyor frame lander with both alpha-scattering analyzer and motorized scoop",
+    "scientific_instruments": [
+      {
+        "name": "Alpha-Scattering Surface Analyzer",
+        "role": "Highland rock elemental analysis"
+      },
+      {
+        "name": "Surface Sampler Scoop",
+        "role": "Moved boulders and excavated trenches"
+      },
+      {
+        "name": "Laser Detector Mirrors",
+        "role": "Detected Earth-based laser pulses (Kitt Peak and Table Mountain)"
+      }
+    ],
+    "scientific_observations": "Only Surveyor mission sent to rugged highland terrain (Tycho ejecta blanket); discovered that highland rocks are depleted in iron and titanium compared to mare basalts and rich in aluminum and calcium (anorthositic signature); detected laser beams directed from Earth observatories; analyzed rough boulder ejecta field.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Surveyor 7)",
+        "source": "NASA PDS",
+        "type": "Highland Geochemistry",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "LROC Featured Image (Surveyor 7 on Tycho)",
+        "source": "LROC ASU",
+        "type": "Orbital NAC Imagery",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "NASA SP-173 / Patterson et al. (1970), Science",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Highest southern latitude Surveyor mission (40.86\u00b0S). Landed in rocky, bouldery highlands without damaging landing gear.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "aluminum_oxide_wt_percent": 22.0,
+      "iron_oxide_wt_percent": 5.5
+    }
+  },
+  {
+    "id": "apollo-11",
+    "name": "Apollo 11",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1969-07-16",
+    "landing_date": "1969-07-20",
+    "latitude_deg": 0.67408,
+    "longitude_deg": 23.47297,
+    "site_name": "Statio Tranquillitatis, Mare Tranquillitatis",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M102553950LE)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC sub-meter resolution of LM descent stage and equipment)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Lunar Module LM-5 'Eagle' (Descent Stage left on surface, 2,034 kg dry)",
+    "scientific_instruments": [
+      {
+        "name": "Passive Seismic Experiment Package (PSEP)",
+        "role": "Monitored lunar seismicity and meteorite impacts"
+      },
+      {
+        "name": "Laser Ranging Retroreflector (LRRR)",
+        "role": "100 corner-cube quartz prisms for sub-centimeter Earth-Moon laser ranging"
+      },
+      {
+        "name": "Solar Wind Composition (SWC)",
+        "role": "Deployable aluminum foil measuring noble gas isotopic ratios in solar wind"
+      }
+    ],
+    "scientific_observations": "First human exploration of the lunar surface (Neil Armstrong & Buzz Aldrin); returned 21.55 kg of lunar mare basalts and breccias; dated Mare Tranquillitatis volcanism to ~3.7 billion years; LRRR remains operational after 55+ years, establishing the Moon's orbital recession rate (3.8 cm/yr) and testing General Relativity; detected lunar thermal seismic events.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Lunar Sample Database (Apollo 11)",
+        "source": "NASA PDS",
+        "type": "Curated Samples",
+        "url": "https://curator.jsc.nasa.gov/lunar/"
+      },
+      {
+        "name": "Apollo 11 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Transcripts & Photos",
+        "url": "https://www.hq.nasa.gov/alsj/a11/"
+      },
+      {
+        "name": "LROC NAC Image M102553950LE",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Apollo 11 Mission Report (NASA SP-214) / Wagner et al. (2017)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Surface stay time 21.6 hours. Single EVA duration 2h 31m. Astronaut max traverse radius ~60m.",
+    "samples_returned_kg": 21.55,
+    "distance_traversed_km": 0.25,
+    "ground_truth_observations": {
+      "sample_mass_kg": 21.55,
+      "basalt_age_billion_years": 3.7,
+      "lunar_recession_cm_year": 3.82
+    }
+  },
+  {
+    "id": "apollo-12",
+    "name": "Apollo 12",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1969-11-14",
+    "landing_date": "1969-11-19",
+    "latitude_deg": -3.01239,
+    "longitude_deg": -23.42157,
+    "site_name": "Oceanus Procellarum",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M104662862R)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC ground truth; 160m from Surveyor 3)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "LM-6 'Intrepid' Descent Stage, ALSEP central station",
+    "scientific_instruments": [
+      {
+        "name": "ALSEP Central Station (PSE, LSM, SWS, SIDE, CCIG)",
+        "role": "Long-lived geophysical observatory powered by SNAP-27 RTG"
+      },
+      {
+        "name": "Solar Wind Spectrometer (SWS)",
+        "role": "Measured solar wind electron and proton energy spectra"
+      },
+      {
+        "name": "Lunar Surface Magnetometer (LSM)",
+        "role": "Mapped crustal remanent magnetic fields (measured 38 nT field)"
+      }
+    ],
+    "scientific_observations": "Demonstrated precision landing (~160m from Surveyor 3); Charles Conrad & Alan Bean conducted 2 EVAs (7h 45m); returned 34.35 kg samples including younger mare basalts (3.1-3.3 Ga) and KREEP ejecta from Copernicus crater; retrieved Surveyor 3 parts; ALSEP operated continuously for 8 years transmitting seismic and magnetic data.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Apollo 12 ALSEP)",
+        "source": "NASA PDS",
+        "type": "Geophysical Time Series",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "Apollo 12 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Transcripts & Data",
+        "url": "https://www.hq.nasa.gov/alsj/a12/"
+      }
+    ],
+    "original_source": "Apollo 12 Preliminary Science Report (NASA SP-235)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Surface stay 31.5 hours. First RTG-powered ALSEP station deployed on the Moon.",
+    "samples_returned_kg": 34.35,
+    "distance_traversed_km": 1.45,
+    "ground_truth_observations": {
+      "crustal_magnetic_field_nt": 38.0,
+      "basalt_age_billion_years": 3.2
+    }
+  },
+  {
+    "id": "luna-16",
+    "name": "Luna 16",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1970-09-12",
+    "landing_date": "1970-09-20",
+    "latitude_deg": -0.686,
+    "longitude_deg": 56.364,
+    "site_name": "Mare Fecunditatis",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M114128282LE)",
+    "coordinate_accuracy": "\u00b15 m (Lander descent stage spotted on LROC NAC)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "E-8-5 landing stage + ascent stage with spherical Earth return capsule",
+    "scientific_instruments": [
+      {
+        "name": "Rotary-Percussion Core Drill",
+        "role": "Drilled to 35 cm depth in darkness before sunrise"
+      },
+      {
+        "name": "Radiation & Photometer Sensors",
+        "role": "Measured descent dynamics and radiation"
+      }
+    ],
+    "scientific_observations": "First fully automated robotic sample return from another celestial body; drilled to 35 cm depth and returned 101 grams of core sample to Earth on Sept 24, 1970; chemical analysis confirmed ilmenite-rich basalt with crystallization age ~3.4 Ga.",
+    "available_datasets": [
+      {
+        "name": "Vernadsky Institute Lunar Collection",
+        "source": "GEOKHI RAS",
+        "type": "Sample Catalog",
+        "url": "http://www.geokhi.ru/"
+      },
+      {
+        "name": "NASA PDS Geosciences (Luna 16)",
+        "source": "NASA PDS",
+        "type": "Geochemistry",
+        "url": "https://pds-geosciences.wustl.edu/"
+      }
+    ],
+    "original_source": "Vinogradov (1971), Nature / Soviet Academy of Sciences",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed in total darkness during lunar night; ascent stage fired automatically back to Kazakhstan.",
+    "samples_returned_kg": 0.101,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "core_depth_cm": 35.0,
+      "sample_mass_grams": 101.0,
+      "basalt_age_billion_years": 3.4
+    }
+  },
+  {
+    "id": "luna-17",
+    "name": "Luna 17 / Lunokhod 1",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1970-11-10",
+    "landing_date": "1970-11-17",
+    "latitude_deg": 38.238,
+    "longitude_deg": -35.002,
+    "site_name": "Mare Imbrium",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M114185541RE)",
+    "coordinate_accuracy": "\u00b11 m (Rover parking coordinate: 38.3151\u00b0N, -35.0017\u00b0W confirmed by LROC)",
+    "mission_type": "Lander / Rover",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Luna 17 lander stage + Lunokhod 1 eight-wheeled robotic rover (840 kg)",
+    "scientific_instruments": [
+      {
+        "name": "RIFMA X-ray Fluorescence Spectrometer",
+        "role": "Analyzed regolith chemical composition"
+      },
+      {
+        "name": "PROP Cone Penetrometer",
+        "role": "Executed 500 mechanical penetrations"
+      },
+      {
+        "name": "French Laser Retroreflector",
+        "role": "14 corner-cube silica reflectors for Earth laser ranging"
+      }
+    ],
+    "scientific_observations": "First planetary robotic roving vehicle; operated for 322 Earth days (planned for 90); traversed 10,540 meters across Mare Imbrium; transmitted 20,000 television frames and 206 high-res panoramas; conducted 500 soil penetrations and 25 X-ray chemical analyses; laser retroreflector rediscovered by LROC and Apache Point Observatory in 2010.",
+    "available_datasets": [
+      {
+        "name": "Soviet Lunokhod 1 Archive",
+        "source": "IKI / RAS",
+        "type": "Traverse & Telemetry",
+        "url": "http://mentallandscape.com/"
+      },
+      {
+        "name": "LROC Featured Image (Lunokhod 1 Track)",
+        "source": "LROC ASU",
+        "type": "Orbital NAC Imagery",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Soviet Academy of Sciences (1971) / Murphy et al. (2011), Icarus",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Operated through 11 lunar nights using polonium-210 radioisotope heater unit.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 10.54,
+    "ground_truth_observations": {
+      "total_traverse_m": 10540.0,
+      "soil_penetrations_count": 500,
+      "iron_oxide_wt_percent": 15.0
+    }
+  },
+  {
+    "id": "apollo-14",
+    "name": "Apollo 14",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1971-01-31",
+    "landing_date": "1971-02-05",
+    "latitude_deg": -3.6453,
+    "longitude_deg": -17.47136,
+    "site_name": "Fra Mauro Formation",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M114165453LE)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC sub-meter resolution of LM, ALSEP, MET tracks)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "LM-8 'Antares' Descent Stage, Modular Equipment Transporter (MET pull cart)",
+    "scientific_instruments": [
+      {
+        "name": "Active Seismic Experiment (ASE)",
+        "role": "Generated seismic waves via thumper and mortar charges"
+      },
+      {
+        "name": "Passive Seismic Experiment (PSE)",
+        "role": "Long-term monitoring of moonquakes"
+      },
+      {
+        "name": "Charged Particle Lunar Environment (CPLEE)",
+        "role": "Measured fluxes of solar wind electrons and protons"
+      },
+      {
+        "name": "Laser Ranging Retroreflector (LRRR)",
+        "role": "Corner-cube laser reflector array"
+      }
+    ],
+    "scientific_observations": "Alan Shepard & Edgar Mitchell explored the Fra Mauro highlands; returned 42.28 kg samples from Cone Crater ejecta; confirmed Fra Mauro is ancient ejecta from the giant Imbrium basin impact; active seismic thumper determined regolith thickness is 8.5m; collected sample 14321 ('Big Bertha'), containing a terrestrial meteorite fragment formed on Earth ~4.0 Ga.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Apollo 14 ALSEP)",
+        "source": "NASA PDS",
+        "type": "Seismic & Geology",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "Apollo 14 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Transcripts & Science",
+        "url": "https://www.hq.nasa.gov/alsj/a14/"
+      }
+    ],
+    "original_source": "Apollo 14 Preliminary Science Report (NASA SP-272)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Two EVAs totaling 9h 22m. Shepard hit two golf balls on the lunar surface.",
+    "samples_returned_kg": 42.28,
+    "distance_traversed_km": 3.45,
+    "ground_truth_observations": {
+      "regolith_depth_m": 8.5,
+      "sample_mass_kg": 42.28
+    }
+  },
+  {
+    "id": "apollo-15",
+    "name": "Apollo 15",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1971-07-26",
+    "landing_date": "1971-07-30",
+    "latitude_deg": 26.13222,
+    "longitude_deg": 3.63386,
+    "site_name": "Hadley-Apennine",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M111571816LE)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC confirmed; LM, LRV, and ALSEP mapped)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "LM-10 'Falcon' Descent Stage, Lunar Roving Vehicle (LRV-1)",
+    "scientific_instruments": [
+      {
+        "name": "Heat Flow Experiment (HFE)",
+        "role": "Two boreholes measuring internal lunar geothermal heat flux"
+      },
+      {
+        "name": "Lunar Surface Magnetometer (LSM)",
+        "role": "Mapped local crustal magnetic fields"
+      },
+      {
+        "name": "Lunar Roving Vehicle (LRV-1)",
+        "role": "First electric roving vehicle on the Moon"
+      },
+      {
+        "name": "Apollo Lunar Surface Drill",
+        "role": "Extracted 3-meter continuous regolith core"
+      }
+    ],
+    "scientific_observations": "First extended J-class scientific mission; David Scott & James Irwin traversed 27.9 km in LRV-1 along Hadley Rille and Mt. Hadley Delta; returned 77.31 kg of samples including the famous 'Genesis Rock' (sample 15415, anorthosite dated at ~4.1 Ga, validating the lunar magma ocean hypothesis); first in-situ planetary heat flow measurements (measured heat flux of 21 \u00b1 3 mW/m\u00b2).",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Apollo 15 Heat Flow)",
+        "source": "NASA PDS",
+        "type": "Geothermal Data",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "Apollo 15 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Astronaut Logs & Samples",
+        "url": "https://www.hq.nasa.gov/alsj/a15/"
+      }
+    ],
+    "original_source": "Apollo 15 Preliminary Science Report (NASA SP-289)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Three EVAs totaling 18h 33m. Demonstrated Galileo's hammer-and-feather gravitational equivalence experiment.",
+    "samples_returned_kg": 77.31,
+    "distance_traversed_km": 27.9,
+    "ground_truth_observations": {
+      "geothermal_heat_flow_mw_m2": 21.0,
+      "heat_flow_uncertainty_mw_m2": 3.0,
+      "genesis_rock_age_billion_years": 4.1
+    }
+  },
+  {
+    "id": "luna-20",
+    "name": "Luna 20",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1972-02-14",
+    "landing_date": "1972-02-21",
+    "latitude_deg": 3.786,
+    "longitude_deg": 56.625,
+    "site_name": "Apollonius Highlands",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M114128282LE)",
+    "coordinate_accuracy": "\u00b15 m (LROC NAC identified descent stage 1.8 km from Luna 18)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "E-8-5M robotic lander and ascent return vehicle",
+    "scientific_instruments": [
+      {
+        "name": "Rotary-Percussion Diamond Drill",
+        "role": "Drilled into hard anorthositic highland rock"
+      },
+      {
+        "name": "Telephotometer System",
+        "role": "Monitored drilling and surface condition"
+      }
+    ],
+    "scientific_observations": "First robotic sample return from the lunar highlands; drilled into tough anorthositic rock and returned 55 grams of core sample to Earth on Feb 25, 1972; geochemical analysis demonstrated that the bright lunar terrae (highlands) consist predominantly of anorthosite (rich in plagioclase feldspar), fundamentally distinct from mare basalts.",
+    "available_datasets": [
+      {
+        "name": "Vernadsky Institute Lunar Core Catalog",
+        "source": "GEOKHI RAS",
+        "type": "Highland Samples",
+        "url": "http://www.geokhi.ru/"
+      },
+      {
+        "name": "NASA PDS Geosciences (Luna 20)",
+        "source": "NASA PDS",
+        "type": "Geochemistry",
+        "url": "https://pds-geosciences.wustl.edu/"
+      }
+    ],
+    "original_source": "Vinogradov (1973), Geochimica et Cosmochimica Acta / Soviet Academy of Sciences",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed only 1.8 km from the impact site of the failed Luna 18 mission.",
+    "samples_returned_kg": 0.055,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "sample_mass_grams": 55.0,
+      "anorthosite_plagioclase_percent": 82.0
+    }
+  },
+  {
+    "id": "apollo-16",
+    "name": "Apollo 16",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1972-04-16",
+    "landing_date": "1972-04-21",
+    "latitude_deg": -8.97301,
+    "longitude_deg": 15.49812,
+    "site_name": "Descartes Highlands",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M109012489RE)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC sub-meter resolution of LM, LRV, ALSEP)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "LM-11 'Orion' Descent Stage, Lunar Roving Vehicle (LRV-2)",
+    "scientific_instruments": [
+      {
+        "name": "Far UV Camera/Spectrograph",
+        "role": "First astronomical telescope operated on the lunar surface"
+      },
+      {
+        "name": "ALSEP (PSE, ASE, LSM, HFE)",
+        "role": "Geophysical observatory suite"
+      },
+      {
+        "name": "Lunar Portable Magnetometer (LPM)",
+        "role": "Measured localized magnetic anomalies along traverse"
+      }
+    ],
+    "scientific_observations": "John Young & Charles Duke traversed 26.7 km in LRV-2 across Cayley Plains and Stone Mountain; returned 95.71 kg samples; completely overturned pre-mission theory of highland volcanism by discovering that the Cayley and Descartes formations consist of impact-melt breccias; Far UV camera obtained astronomical spectra of Earth's geocorona, the solar wind, and deep-space nebulae.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Lunar Sample Database (Apollo 16)",
+        "source": "NASA PDS",
+        "type": "Highland Breccia Catalog",
+        "url": "https://curator.jsc.nasa.gov/"
+      },
+      {
+        "name": "Apollo 16 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Transcripts & UV Images",
+        "url": "https://www.hq.nasa.gov/alsj/a16/"
+      }
+    ],
+    "original_source": "Apollo 16 Preliminary Science Report (NASA SP-315)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Highest elevation Apollo landing site (1.4 km above lunar datum). Three EVAs totaling 20h 14m.",
+    "samples_returned_kg": 95.71,
+    "distance_traversed_km": 26.7,
+    "ground_truth_observations": {
+      "surface_elevation_above_datum_m": 1400.0,
+      "impact_breccia_fraction_percent": 95.0
+    }
+  },
+  {
+    "id": "apollo-17",
+    "name": "Apollo 17",
+    "agency": "NASA",
+    "country": "USA",
+    "launch_date": "1972-12-07",
+    "landing_date": "1972-12-11",
+    "latitude_deg": 20.1908,
+    "longitude_deg": 30.77168,
+    "site_name": "Taurus-Littrow Valley",
+    "region": "Nearside Highlands",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced / Mean Earth (LROC NAC M129086118RE)",
+    "coordinate_accuracy": "\u00b10.5 m (LROC NAC sub-meter resolution of LM, LRV, ALSEP, footpaths)",
+    "mission_type": "Crewed Landing",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "LM-12 'Challenger' Descent Stage, Lunar Roving Vehicle (LRV-3)",
+    "scientific_instruments": [
+      {
+        "name": "Heat Flow Experiment (HFE)",
+        "role": "Measured steady-state lunar heat flow (16 \u00b1 2 mW/m\u00b2)"
+      },
+      {
+        "name": "Traverse Gravimeter (TGE)",
+        "role": "Measured relative gravity differences across valley floor"
+      },
+      {
+        "name": "Lunar Atmospheric Composition Experiment (LACE)",
+        "role": "Detected noble gases in tenuous exosphere"
+      },
+      {
+        "name": "Surface Electrical Properties (SEP)",
+        "role": "Interferometric radar mapping of subsurface layering"
+      }
+    ],
+    "scientific_observations": "Final crewed Apollo mission; Gene Cernan & Harrison 'Jack' Schmitt (first geologist on the Moon) traversed 35.9 km in LRV-3; returned 110.5 kg samples (largest Apollo haul); discovered iconic orange glass beads at Shorty Crater (pyroclastic volcanic fire fountaining from mantle depth ~3.64 Ga); LACE detected tenuous exosphere of helium, neon, and argon-40; HFE measured thermal heat flux of 16 \u00b1 2 mW/m\u00b2.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (Apollo 17 HFE & LACE)",
+        "source": "NASA PDS",
+        "type": "Atmospheric & Heat Flow",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "Apollo 17 Lunar Surface Journal",
+        "source": "NASA History",
+        "type": "Field Geology Logs",
+        "url": "https://www.hq.nasa.gov/alsj/a17/"
+      }
+    ],
+    "original_source": "Apollo 17 Preliminary Science Report (NASA SP-330)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Record surface stay of 75 hours and 22h 4m total EVA time. Schmitt remains the only trained scientist to walk on the Moon.",
+    "samples_returned_kg": 110.5,
+    "distance_traversed_km": 35.9,
+    "ground_truth_observations": {
+      "geothermal_heat_flow_mw_m2": 16.0,
+      "heat_flow_uncertainty_mw_m2": 2.0,
+      "orange_glass_pyroclastic_age_billion_years": 3.64
+    }
+  },
+  {
+    "id": "luna-21",
+    "name": "Luna 21 / Lunokhod 2",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1973-01-08",
+    "landing_date": "1973-01-15",
+    "latitude_deg": 25.85,
+    "longitude_deg": 30.45,
+    "site_name": "Le Monnier Crater, Mare Serenitatis",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M122007650LE)",
+    "coordinate_accuracy": "\u00b11 m (Rover final parking position at 25.9232\u00b0N, 30.9221\u00b0E verified by LROC)",
+    "mission_type": "Lander / Rover",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Luna 21 lander + Lunokhod 2 eight-wheeled rover (840 kg)",
+    "scientific_instruments": [
+      {
+        "name": "RIFMA-M X-ray Spectrometer",
+        "role": "Analyzed regolith elemental chemistry"
+      },
+      {
+        "name": "SG-70A Three-Component Magnetometer",
+        "role": "Mounted on 1.5m boom to measure crustal magnetic gradients"
+      },
+      {
+        "name": "French Laser Retroreflector",
+        "role": "Laser ranging reflector on rover lid"
+      },
+      {
+        "name": "Visible Astrophotometer",
+        "role": "Measured night sky background sky glow"
+      }
+    ],
+    "scientific_observations": "Traversed 39.0 km over 4 months across Le Monnier crater floor and into the Fossa Dstraight tectonic fissure (world off-world distance record held until 2014); transmitted 80,000 television frames and 86 panoramic views; mapped sharp crustal magnetic transitions across the mare-highland boundary; laser retroreflector remains active.",
+    "available_datasets": [
+      {
+        "name": "Soviet Lunokhod 2 Archive",
+        "source": "IKI / RAS",
+        "type": "Traverse & Magnetometer",
+        "url": "http://mentallandscape.com/"
+      },
+      {
+        "name": "LROC Featured Image (Lunokhod 2 Full Track)",
+        "source": "LROC ASU",
+        "type": "Orbital Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Soviet Academy of Sciences (1973) / Karachevtseva et al. (2013), Icarus",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Rover ceased operating in May 1973 after accidentally scooping loose soil from crater wall into radiator, causing thermal overheating.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 39.0,
+    "ground_truth_observations": {
+      "total_traverse_km": 39.0,
+      "magnetic_field_transition_nt": 25.0
+    }
+  },
+  {
+    "id": "luna-23",
+    "name": "Luna 23",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1974-10-28",
+    "landing_date": "1974-11-06",
+    "latitude_deg": 12.667,
+    "longitude_deg": 62.152,
+    "site_name": "Southern Mare Crisium",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M174868307RE)",
+    "coordinate_accuracy": "\u00b15 m (LROC NAC imaged lander resting on its side)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Partial Success",
+    "lander_rover_info": "E-8-5M robotic lander and sample ascent vehicle",
+    "scientific_instruments": [
+      {
+        "name": "2.5-meter Deep Rotary Core Drill",
+        "role": "Designed to extract continuous 2.5m core"
+      },
+      {
+        "name": "Radio Telemetry Transmitters",
+        "role": "Transmitted engineering data for 3 days"
+      }
+    ],
+    "scientific_observations": "Successfully soft-landed in southern Mare Crisium, but encountered rough slope and tipped onto its side upon touchdown; the drill apparatus was damaged and unable to collect or load core samples into the return capsule; transmitted engineering telemetry for 3 days; identified by LROC NAC only 2.3 km from the successful Luna 24 touchdown site.",
+    "available_datasets": [
+      {
+        "name": "Soviet Lunar Exploration Archive",
+        "source": "IKI / RAS",
+        "type": "Mission Logs",
+        "url": "http://mentallandscape.com/"
+      },
+      {
+        "name": "LROC Featured Image (Luna 23 and Luna 24)",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Imaging",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Soviet Academy of Sciences (1974) / Plescia et al. (2012), LPSC",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed on side. Set the ground truth target for the successful backup mission Luna 24.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "landing_tilt_angle_deg": 35.0
+    }
+  },
+  {
+    "id": "luna-24",
+    "name": "Luna 24",
+    "agency": "USSR / Lavochkin",
+    "country": "USSR",
+    "launch_date": "1976-08-09",
+    "landing_date": "1976-08-18",
+    "latitude_deg": 12.714,
+    "longitude_deg": 62.213,
+    "site_name": "Southern Mare Crisium",
+    "region": "Nearside Maria",
+    "era": "Space Race (1966-1976)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M174868307RE)",
+    "coordinate_accuracy": "\u00b15 m (Lander descent stage confirmed by LROC NAC)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "E-8-5M robotic lander and sample ascent return capsule",
+    "scientific_instruments": [
+      {
+        "name": "Spiral Deep Core Drill",
+        "role": "Drilled to 2.0 meters depth and packed stratified core"
+      },
+      {
+        "name": "Earth Return Vehicle",
+        "role": "Autonomous ascent stage"
+      }
+    ],
+    "scientific_observations": "Final Soviet lunar mission and last surface sample return of the 20th century; successfully drilled to 2.0 meters depth and returned 170.1 grams of stratified core sample to Earth on Aug 22, 1976; geochemical analysis revealed very-low-titanium (VLT) mare basalts; Russian scientists reported detection of trace water (0.1 wt%) in 1978, verified decades later by modern instruments.",
+    "available_datasets": [
+      {
+        "name": "Vernadsky Institute Luna 24 Core Archive",
+        "source": "GEOKHI RAS",
+        "type": "Stratified Core Data",
+        "url": "http://www.geokhi.ru/"
+      },
+      {
+        "name": "NASA PDS Geosciences (Luna 24)",
+        "source": "NASA PDS",
+        "type": "Geochemistry",
+        "url": "https://pds-geosciences.wustl.edu/"
+      }
+    ],
+    "original_source": "Barsukov et al. (1977), Geokhimiya / Soviet Academy of Sciences",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Marked the conclusion of the first lunar exploration era (1959-1976). Landed 2.3 km northeast of Luna 23.",
+    "samples_returned_kg": 0.1701,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "core_depth_m": 2.0,
+      "sample_mass_grams": 170.1,
+      "reported_water_trace_wt_percent": 0.1
+    }
+  },
+  {
+    "id": "change-3",
+    "name": "Chang'e 3 / Yutu",
+    "agency": "CNSA",
+    "country": "China",
+    "launch_date": "2013-12-01",
+    "landing_date": "2013-12-14",
+    "latitude_deg": 44.1214,
+    "longitude_deg": -19.5116,
+    "site_name": "Mare Imbrium (Guang Han Gong)",
+    "region": "Nearside Maria",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1142582775R)",
+    "coordinate_accuracy": "\u00b11 m (Lander and rover tracks clearly mapped by LROC NAC)",
+    "mission_type": "Lander / Rover",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Chang'e 3 lander + Yutu 'Jade Rabbit' six-wheeled rover (140 kg)",
+    "scientific_instruments": [
+      {
+        "name": "Moon-based Ultraviolet Telescope (MUTC)",
+        "role": "Astronomical UV telescope monitoring variable stars"
+      },
+      {
+        "name": "Extreme Ultraviolet Camera (EUVC)",
+        "role": "Imaged Earth's plasmasphere from the Moon"
+      },
+      {
+        "name": "Lunar Penetrating Radar (LPR)",
+        "role": "Dual-frequency ground penetrating radar (subsurface down to 400m)"
+      },
+      {
+        "name": "VNIS Spectrometer",
+        "role": "Visible and Near-Infrared Imaging Spectrometer"
+      }
+    ],
+    "scientific_observations": "First soft landing on the Moon in 37 years; discovered an extraordinarily young (~2.5 Ga) high-titanium, olivine-rich basalt; LPR mapped subsurface regolith thickness and underlying basalt flow layering; MUTC conducted continuous long-duration UV astronomy free from atmospheric absorption; lander functioned for over 8 years.",
+    "available_datasets": [
+      {
+        "name": "China Lunar Exploration Program (CLEP) Data Portal",
+        "source": "CNSA / NAOC",
+        "type": "Raw Science & Spectra",
+        "url": "https://moon.bao.ac.cn/"
+      },
+      {
+        "name": "LROC NAC Image M1142582775R",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Li et al. (2014), Research in Astronomy and Astrophysics / Wagner et al. (2017)",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Yutu rover traveled 114m before suffering mechanical wheel drive issue in 2nd lunar night, but continued scientific observations as stationary laboratory.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.114,
+    "ground_truth_observations": {
+      "basalt_age_billion_years": 2.5,
+      "regolith_depth_m": 4.0
+    }
+  },
+  {
+    "id": "change-4",
+    "name": "Chang'e 4 / Yutu-2",
+    "agency": "CNSA",
+    "country": "China",
+    "launch_date": "2018-12-07",
+    "landing_date": "2019-01-03",
+    "latitude_deg": -45.457,
+    "longitude_deg": 177.588,
+    "site_name": "Von K\u00e1rm\u00e1n Crater, South Pole-Aitken (SPA) Basin (Statio Tianhe)",
+    "region": "Farside (SPA Basin)",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1303619844R)",
+    "coordinate_accuracy": "\u00b12 m (LROC NAC confirmed; Queqiao relay telemetry)",
+    "mission_type": "Lander / Rover",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Chang'e 4 lander + Yutu-2 rover (140 kg) + Queqiao Earth-Moon L2 relay satellite",
+    "scientific_instruments": [
+      {
+        "name": "Low-Frequency Radio Spectrometer (LFS)",
+        "role": "Radio astronomy (0.1-40 MHz) on radio-quiet lunar farside"
+      },
+      {
+        "name": "Lunar Penetrating Radar (LPR)",
+        "role": "Mapped subsurface porous ejecta layers to 40m depth"
+      },
+      {
+        "name": "VNIS Spectrometer",
+        "role": "Identified low-calcium pyroxene and olivine (mantle signatures)"
+      },
+      {
+        "name": "LND (Germany)",
+        "role": "Lunar lander neutron and radiation dosimetry"
+      },
+      {
+        "name": "ASAN (Sweden)",
+        "role": "Advanced small analyzer for neutrals"
+      }
+    ],
+    "scientific_observations": "First soft landing on the farside of the Moon in human history; relayed all data through Queqiao halo orbit satellite; VNIS identified mantle-derived low-calcium pyroxene and olivine excavated by the ancient SPA impact basin; LPR revealed deep porous regolith layers; conducted radio astronomy shielded from terrestrial electromagnetic pollution; rover active for >5 years.",
+    "available_datasets": [
+      {
+        "name": "CLEP Farside Data Release Center",
+        "source": "CNSA / NAOC",
+        "type": "Farside Spectra & Radar",
+        "url": "https://moon.bao.ac.cn/"
+      },
+      {
+        "name": "LROC NAC frame M1303619844R",
+        "source": "LROC ASU",
+        "type": "Farside Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Li et al. (2019), Nature / Di et al. (2019), Science China Information Sciences",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Yutu-2 rover has traversed over 1.6 km on the lunar farside, surviving more than 60 lunar days.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 1.61,
+    "ground_truth_observations": {
+      "farside_regolith_thickness_m": 12.0,
+      "pyroxene_olivine_ratio": 1.4
+    }
+  },
+  {
+    "id": "change-5",
+    "name": "Chang'e 5",
+    "agency": "CNSA",
+    "country": "China",
+    "launch_date": "2020-11-23",
+    "landing_date": "2020-12-01",
+    "latitude_deg": 43.0576,
+    "longitude_deg": -51.9161,
+    "site_name": "Mons R\u00fcmker, Oceanus Procellarum (Statio Tianchuan)",
+    "region": "Nearside Maria",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1361565451R)",
+    "coordinate_accuracy": "\u00b12 m (LROC NAC imaged descent stage and scoop scars)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Four-module complex: Orbiter, Returner, Lander, Ascender with rotary drill & robotic scoop",
+    "scientific_instruments": [
+      {
+        "name": "Lunar Regolith Penetrating Radar (LRPR)",
+        "role": "Mapped subsurface prior to drilling"
+      },
+      {
+        "name": "Lunar Mineralogical Spectrometer (LMS)",
+        "role": "Analyzed in-situ mineralogy of sampling site"
+      },
+      {
+        "name": "Sampling & Coring Device",
+        "role": "Collected 1.73 kg of surface and sub-surface samples"
+      }
+    ],
+    "scientific_observations": "First lunar sample return in 44 years; retrieved 1,731.2 grams of young mare basalts; isotopic radiometric dating revealed an age of 2.03 billion years, proving the Moon remained volcanically active 1 billion years longer than previous Apollo samples indicated; identified hydroxyl/water in apatite minerals (up to 283 ppm); discovered new mineral 'Changesite-(Y)'.",
+    "available_datasets": [
+      {
+        "name": "CLEP Sample Release Center",
+        "source": "CNSA / NAOC",
+        "type": "Sample Catalog",
+        "url": "https://moon.bao.ac.cn/"
+      },
+      {
+        "name": "LROC NAC Image M1361565451R",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "Che et al. (2021), Science / Li et al. (2021), Nature",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Executed autonomous robotic docking in lunar orbit before returning capsule to Inner Mongolia on Dec 16, 2020.",
+    "samples_returned_kg": 1.7312,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "sample_mass_kg": 1.7312,
+      "basalt_crystallization_age_billion_years": 2.03,
+      "mineral_water_content_ppm": 283.0
+    }
+  },
+  {
+    "id": "chandrayaan-3",
+    "name": "Chandrayaan-3 (Vikram / Pragyan)",
+    "agency": "ISRO",
+    "country": "India",
+    "launch_date": "2023-07-14",
+    "landing_date": "2023-08-23",
+    "latitude_deg": -69.367621,
+    "longitude_deg": 32.348126,
+    "site_name": "Shiv Shakti Point (Manzinus-Boguslawsky Corridor)",
+    "region": "South Pole",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "Mean Earth/Polar Axis (MOON_ME_DE421) & LOLA-referenced",
+    "coordinate_accuracy": "\u00b15 m (Confirmed by LROC NAC image pair M1449830500LR & ISRO Orbiter OHRC)",
+    "mission_type": "Lander / Rover",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Vikram Lander (1,752 kg wet mass, 4 throttleable engines) + Pragyan Rover (26 kg, 6-wheel rocker-bogie)",
+    "scientific_instruments": [
+      {
+        "name": "ChaSTE (Chandra's Surface Thermophysical Experiment)",
+        "role": "10-sensor thermal probe measuring vertical regolith temperature profile to 10cm depth"
+      },
+      {
+        "name": "ILSA (Instrument for Lunar Seismic Activity)",
+        "role": "Six-axis MEMS seismometer measuring lunar micro-seismicity"
+      },
+      {
+        "name": "RAMBHA-LP (Langmuir Probe)",
+        "role": "Measured near-surface electron plasma density and ion sheath"
+      },
+      {
+        "name": "Laser Retroreflector Array (LRA - NASA)",
+        "role": "Corner cube retroreflector for laser ranging"
+      },
+      {
+        "name": "APXS (Alpha Particle X-ray Spectrometer)",
+        "role": "Pragyan rover spectrometer measuring elemental composition"
+      },
+      {
+        "name": "LIBS (Laser-Induced Breakdown Spectroscope)",
+        "role": "Pragyan pulsed laser spectrometer for elemental detection"
+      }
+    ],
+    "scientific_observations": "First successful soft landing in the lunar southern high-latitude region (69.37\u00b0S); ChaSTE probe measured steep vertical thermal gradient from +60\u00b0C on surface down to -10\u00b0C at 8cm depth (proving extraordinary thermal insulating properties of south polar highland regolith); ILSA recorded natural micro-seismic events and rover movement; LIBS and APXS detected unambiguous elemental sulfur (S), iron (Fe), titanium (Ti), aluminum (Al), calcium (Ca), silicon (Si); Vikram performed 40cm surface hop test on Sept 3, 2023; rover traversed 103 meters.",
+    "available_datasets": [
+      {
+        "name": "ISRO ISSDC PRADAN Data Portal",
+        "source": "ISRO ISSDC",
+        "type": "Raw Science & Telemetry",
+        "url": "https://pradan.issdc.gov.in/"
+      },
+      {
+        "name": "LROC Targeted Observation M1449830500LR",
+        "source": "LROC ASU",
+        "type": "Orbital Ground Truth",
+        "url": "https://www.lroc.asu.edu/"
+      },
+      {
+        "name": "IAU Gazette of Planetary Nomenclature (Shiv Shakti Point)",
+        "source": "IAU WGPSN",
+        "type": "Official Landmark Record",
+        "url": "https://planetarynames.wr.usgs.gov/"
+      }
+    ],
+    "original_source": "ISRO Official Announcement (Aug 2023) / IAU WGPSN approval of Shiv Shakti Point / Sivaprasad et al. (2024)",
+    "source_reliability": "Authoritative Space Agency / Canonical Ground Truth",
+    "verification_status": "Verified",
+    "notes_and_limitations": "The reference site for modern polar missions. Landed with pinpoint precision within a 4km x 2.4km landing corridor between Manzinus C and Simpelius N craters.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.103,
+    "ground_truth_observations": {
+      "surface_temp_celsius": 60.0,
+      "subsurface_temp_minus_8cm_celsius": -10.0,
+      "subsurface_temp_minus_10cm_celsius": -68.0,
+      "thermal_conductivity_w_mk": 0.008,
+      "plasma_density_per_m3": 8000000000.0,
+      "detected_sulfur_confidence": "HIGH (LIBS & APXS confirmed)"
+    }
+  },
+  {
+    "id": "slim",
+    "name": "SLIM",
+    "agency": "JAXA",
+    "country": "Japan",
+    "launch_date": "2023-09-06",
+    "landing_date": "2024-01-19",
+    "latitude_deg": -13.316,
+    "longitude_deg": 25.251,
+    "site_name": "Shioli Crater (Theophilus Ejecta Blanket)",
+    "region": "Nearside Highlands",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1460592945L)",
+    "coordinate_accuracy": "\u00b11 m (Touchdown within 55 meters of designated target; world record)",
+    "mission_type": "Robotic Soft Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Smart Lander for Investigating Moon (SLIM, 200 kg) + LEV-1 hopper + LEV-2 'SORA-Q' ball rover",
+    "scientific_instruments": [
+      {
+        "name": "Multi-Band Camera (MBC)",
+        "role": "10-band spectroscopic camera analyzing olivine in crater ejecta"
+      },
+      {
+        "name": "Autonomous Crater Matching Navigation",
+        "role": "Real-time optical terrain feature matching navigation"
+      },
+      {
+        "name": "LEV-1 Hopping Probe",
+        "role": "Hopping telemetry and direct Earth radio communication probe"
+      },
+      {
+        "name": "LEV-2 SORA-Q Micro-Rover",
+        "role": "Transformable ball rover with twin cameras"
+      }
+    ],
+    "scientific_observations": "Achieved unprecedented pinpoint landing precision (<55m from designated bullseye, world record); landed with nose-down orientation on a 15-degree slope; LEV-2 deployed and photographed the inverted lander on the surface; MBC captured multi-band spectroscopy of excavated mantle olivine rocks around Shioli crater; unexpectedly survived three brutal two-week lunar nights.",
+    "available_datasets": [
+      {
+        "name": "JAXA DARTS Data Archive (SLIM)",
+        "source": "JAXA ISAS",
+        "type": "Multi-Band Spectra & Telemetry",
+        "url": "https://darts.isas.jaxa.jp/"
+      },
+      {
+        "name": "LROC NAC frame M1460592945L",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "JAXA Press Release (Jan 2024) / Sakai et al. (2024), Science",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed with main thruster nozzle loss at 50m altitude, causing upside-down resting posture, yet achieved full mission success.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.015,
+    "ground_truth_observations": {
+      "landing_pinpoint_error_m": 55.0,
+      "slope_angle_deg": 15.0,
+      "lunar_nights_survived": 3
+    }
+  },
+  {
+    "id": "im-1",
+    "name": "IM-1 Odysseus (CLPS Nova-C)",
+    "agency": "Intuitive Machines / NASA CLPS",
+    "country": "USA",
+    "launch_date": "2024-02-15",
+    "landing_date": "2024-02-22",
+    "latitude_deg": -80.13,
+    "longitude_deg": 1.44,
+    "site_name": "Malapert A Crater",
+    "region": "South Pole",
+    "era": "Commercial / Artemis Era (2024+)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1463768270L)",
+    "coordinate_accuracy": "\u00b110 m (Identified on crater rim by LROC NAC ~1.5 km from target)",
+    "mission_type": "Commercial Lander",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Nova-C hexagonal prism lander (methalox propulsion, 1,900 kg wet mass)",
+    "scientific_instruments": [
+      {
+        "name": "ROLSES (NASA)",
+        "role": "Radio observations of photoelectron sheath and solar radio bursts"
+      },
+      {
+        "name": "NDL (Navigation Doppler Lidar - NASA)",
+        "role": "Precision velocity and ranging lidar"
+      },
+      {
+        "name": "RFMG (Radio Frequency Mass Gauge - NASA)",
+        "role": "Cryogenic propellant mass measurement in microgravity"
+      },
+      {
+        "name": "SCALP (NASA)",
+        "role": "Stereo cameras for plume-surface interaction"
+      },
+      {
+        "name": "LRA (Laser Retroreflector Array - NASA)",
+        "role": "Passive laser corner-cube array"
+      },
+      {
+        "name": "ILO-X (Commercial)",
+        "role": "Dual lunar cameras for astronomy and lunar horizon"
+      }
+    ],
+    "scientific_observations": "First commercial spacecraft to achieve a lunar soft landing; first American return to the lunar surface in 52 years; southern-most landing site at the time (80.13\u00b0S, ~300 km from South Pole); NDL lidar data proved operational navigation suitability; RFMG validated propellant cryogenic gauging in microgravity.",
+    "available_datasets": [
+      {
+        "name": "NASA PDS Geosciences (CLPS IM-1)",
+        "source": "NASA PDS",
+        "type": "CLPS Science Data",
+        "url": "https://pds-geosciences.wustl.edu/"
+      },
+      {
+        "name": "LROC NAC frame M1463768270L",
+        "source": "LROC ASU",
+        "type": "Orbital Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "NASA CLPS Office / Intuitive Machines Mission Telemetry / LROC Featured Image (IM-1)",
+    "source_reliability": "Authoritative Space Agency / Commercial Partner",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Landed with lateral velocity causing one landing leg to catch, resting at ~30\u00b0 tilt.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "latitude_deg": -80.13,
+      "tilt_angle_deg": 30.0,
+      "distance_to_south_pole_km": 300.0
+    }
+  },
+  {
+    "id": "change-6",
+    "name": "Chang'e 6",
+    "agency": "CNSA",
+    "country": "China",
+    "launch_date": "2024-05-03",
+    "landing_date": "2024-06-01",
+    "latitude_deg": -41.6385,
+    "longitude_deg": -153.9852,
+    "site_name": "Apollo Crater, South Pole-Aitken (SPA) Basin (Statio Tianchuan Farside)",
+    "region": "Farside (SPA Basin)",
+    "era": "Lunar Renaissance (2013-2024)",
+    "coordinate_system": "LOLA-referenced (LROC NAC frame M1474251740R)",
+    "coordinate_accuracy": "\u00b12 m (Confirmed by LRO NAC M1474251740R in southern Apollo basin)",
+    "mission_type": "Robotic Sample Return",
+    "landing_outcome": "Historical Success",
+    "lander_rover_info": "Four-module complex with Queqiao-2 relay satellite; drill and robotic arm with mini-rover",
+    "scientific_instruments": [
+      {
+        "name": "LMS Mineralogical Spectrometer",
+        "role": "In-situ mineralogical spectra of farside sampling area"
+      },
+      {
+        "name": "DORN (France)",
+        "role": "Detection of Outgassing Radon measuring radioactive gas transport"
+      },
+      {
+        "name": "NILS (ESA / Sweden)",
+        "role": "Negative Ions at the Lunar Surface detector"
+      },
+      {
+        "name": "INRRI (Italy)",
+        "role": "Passive laser retroreflector array"
+      },
+      {
+        "name": "Autonomous Mini-Rover",
+        "role": "Autonomous mobile camera photographing lander and national flag"
+      }
+    ],
+    "scientific_observations": "First sample return in history from the lunar farside; returned 1,935.3 grams of farside material to Earth on June 25, 2024; sampled ancient farside basalts inside the deep SPA impact basin; DORN measured radon gas transport in farside regolith; mini-rover photographed the lander with national flag deployed.",
+    "available_datasets": [
+      {
+        "name": "CLEP Farside Sample Archive",
+        "source": "CNSA / NAOC",
+        "type": "Farside Samples & Spectra",
+        "url": "https://moon.bao.ac.cn/"
+      },
+      {
+        "name": "LROC NAC frame M1474251740R",
+        "source": "LROC ASU",
+        "type": "Farside Hardware Mapping",
+        "url": "https://www.lroc.asu.edu/"
+      }
+    ],
+    "original_source": "CNSA Official Release (June 2024) / Nature / Science China",
+    "source_reliability": "Authoritative Space Agency / Peer-Reviewed Science",
+    "verification_status": "Verified",
+    "notes_and_limitations": "Historic milestone providing the first direct physical samples of the lunar farside and mantle dichotomy.",
+    "samples_returned_kg": 1.9353,
+    "distance_traversed_km": 0.01,
+    "ground_truth_observations": {
+      "sample_mass_kg": 1.9353,
+      "spa_basin_depth_km": 4.5
+    }
+  },
+  {
+    "id": "blue-ghost-1",
+    "name": "Blue Ghost Mission 1",
+    "agency": "Firefly Aerospace / NASA CLPS",
+    "country": "USA",
+    "launch_date": "Planned 2025",
+    "landing_date": "Target: 2 March 2025",
+    "latitude_deg": 18.56,
+    "longitude_deg": 61.81,
+    "site_name": "Mare Crisium (near Mons Latreille)",
+    "region": "Nearside Maria",
+    "era": "Commercial / Artemis Era (2024+)",
+    "coordinate_system": "Mean Earth / LOLA Target Frame",
+    "coordinate_accuracy": "\u00b1100 m (Planned landing ellipse precision: 100m)",
+    "mission_type": "Commercial Lander",
+    "landing_outcome": "Planned Target",
+    "lander_rover_info": "Firefly Blue Ghost lander (150 kg payload capacity to surface)",
+    "scientific_instruments": [
+      {
+        "name": "LISTER (NASA)",
+        "role": "Lunar Instrumentation for Subsurface Thermal Exploration with Rapidity (drills up to 3m deep for heat flow)"
+      },
+      {
+        "name": "LP-PXS (NASA)",
+        "role": "Lunar Planetological X-ray Spectrometer analyzing regolith chemistry"
+      },
+      {
+        "name": "RAC (NASA)",
+        "role": "Regolith Adherence Characterization measuring electrostatic dust adhesion"
+      },
+      {
+        "name": "SCALP (NASA)",
+        "role": "Stereo Cameras for Lunar Plume-Surface Studies"
+      },
+      {
+        "name": "NPL (Next-Gen Retroreflector)",
+        "role": "High-precision single large retroreflector"
+      }
+    ],
+    "scientific_observations": "Planned high-priority subsurface thermal flow investigation (LISTER will drill up to 3m deep to measure heat flow inside Mare Crisium); analyze regolith electrostatics and dust adherence under solar wind bombardment.",
+    "available_datasets": [
+      {
+        "name": "NASA CLPS Task Order 19D Archive",
+        "source": "NASA CLPS",
+        "type": "Mission Manifest",
+        "url": "https://www.nasa.gov/clps"
+      },
+      {
+        "name": "Firefly Aerospace Mission Portal",
+        "source": "Firefly Aerospace",
+        "type": "Flight Operations",
+        "url": "https://fireflyspace.com/"
+      }
+    ],
+    "original_source": "NASA CLPS TO19D Manifest / Firefly Aerospace Mission Portal",
+    "source_reliability": "Authoritative Space Agency / Commercial Manifest",
+    "verification_status": "Partially Verified",
+    "notes_and_limitations": "10 NASA-sponsored instruments investigating lunar heat flow, radiation, and regolith dust physics.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.0,
+    "ground_truth_observations": {
+      "planned_drill_depth_m": 3.0
+    }
+  },
+  {
+    "id": "im-2",
+    "name": "IM-2 Athena",
+    "agency": "Intuitive Machines / NASA CLPS",
+    "country": "USA",
+    "launch_date": "Planned 2025",
+    "landing_date": "Target: 6 March 2025",
+    "latitude_deg": -89.45,
+    "longitude_deg": 222.05,
+    "site_name": "Connecting Ridge (Shackleton-de Gerlache)",
+    "region": "South Pole",
+    "era": "Commercial / Artemis Era (2024+)",
+    "coordinate_system": "Mean Earth / LOLA Target Frame (South Pole Stereographic)",
+    "coordinate_accuracy": "\u00b150 m (Terrain-relative optical navigation target)",
+    "mission_type": "Commercial Lander",
+    "landing_outcome": "Planned Target",
+    "lander_rover_info": "Nova-C Lander + Micro-Nova (\u03bcNova) extreme mobility hopper + Lunar Outpost MAPP rover",
+    "scientific_instruments": [
+      {
+        "name": "PRIME-1 TRIDENT Drill (NASA)",
+        "role": "The Regolith and Ice Drill for Exploring New Terrains (drilling up to 1m depth)"
+      },
+      {
+        "name": "PRIME-1 MSolo Mass Spectrometer (NASA)",
+        "role": "Mass Spectrometer observing lunar operations for water vapor and volatiles"
+      },
+      {
+        "name": "Nokia 4G/LTE Network",
+        "role": "First space-hardened cellular communications network test on lunar surface"
+      },
+      {
+        "name": "Micro-Nova Hopper",
+        "role": "Autonomous rocket hopper designed to fly into a Permanently Shadowed Region (PSR)"
+      }
+    ],
+    "scientific_observations": "First in-situ volatile and water ice drilling attempt at the extreme Lunar South Pole (Connecting Ridge, 89.45\u00b0S); TRIDENT will drill 1 meter down into cryogenic regolith; MSolo mass spectrometer will detect evolving water vapor, CO2, methane, and volatiles; \u03bcNova hopper will hop directly into a permanently shadowed region cold trap.",
+    "available_datasets": [
+      {
+        "name": "NASA PRIME-1 Science Operations Archive",
+        "source": "NASA PDS / KSC",
+        "type": "Polar Ice Mission Plan",
+        "url": "https://www.nasa.gov/"
+      },
+      {
+        "name": "NASA CLPS TO PRIME-1",
+        "source": "NASA CLPS",
+        "type": "Manifest & Objectives",
+        "url": "https://www.nasa.gov/clps"
+      }
+    ],
+    "original_source": "NASA CLPS Office / Intuitive Machines Mission 2 Plan / Paul et al. (2024)",
+    "source_reliability": "Authoritative Space Agency / Commercial Manifest",
+    "verification_status": "Partially Verified",
+    "notes_and_limitations": "Premier precursor for Artemis crewed landing site volatile verification.",
+    "samples_returned_kg": 0.0,
+    "distance_traversed_km": 0.5,
+    "ground_truth_observations": {
+      "planned_ice_drill_depth_m": 1.0,
+      "target_psr_temperature_k": 85.0
+    }
+  }
+]

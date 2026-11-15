@@ -1436,16 +1436,16 @@
         <div class="grading-location-bar">
           <div class="location-display">
             <span class="location-label">SELECTED SITE:</span>
-            <b id="gradingLatLon" class="mono">No location selected</b>
+            <b id="gradingLatLon" class="mono">-69.3676° N/S, 32.3481° E/W</b>
           </div>
           <div class="grading-controls">
             <label class="coord-label">
               LAT
-              <input type="number" id="gradingLat" placeholder="-89.440" min="-90" max="90" step="0.001" class="coord-input">
+              <input type="number" id="gradingLat" value="-69.367621" placeholder="-69.3676" min="-90" max="90" step="0.0001" class="coord-input">
             </label>
             <label class="coord-label">
               LON
-              <input type="number" id="gradingLon" placeholder="222.050" min="-180" max="360" step="0.001" class="coord-input">
+              <input type="number" id="gradingLon" value="32.348126" placeholder="32.3481" min="-180" max="360" step="0.0001" class="coord-input">
             </label>
             <button class="primary" id="gradingAnalyzeBtn" onclick="runGradingFromInputs()">
               ANALYZE & GRADE
@@ -1803,7 +1803,7 @@
   <!-- ================= PROJECT SCRIPTS ================= -->
 
   <script src="config.js?v=4.1"></script>
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=6.1"></script>
 
 </body>
 </html>
